@@ -1,0 +1,33 @@
+---
+// Override of `@astrojs/starlight/components/PageFrame.astro`.
+//
+// A thin dispatcher: looks up the active page's layout in the registry and
+// renders whatever `PageFrame` component it provides (if any), falling back
+// to Starlight's own default otherwise. The actual "no left sidebar"
+// markup lives in `@starlight-layouts/layout-minimal`, not here — this file
+// doesn't need to change when a new layout package is added, whether or
+// not it customizes `PageFrame`.
+//
+// See: tutorial/composing-layout-packages.md
+import Default from '@astrojs/starlight/components/PageFrame.astro';
+import { getLayout } from '../../layouts.config';
+
+const { entry } = Astro.locals.starlightRoute;
+const layout = getLayout(entry.data.pageLayout);
+const Custom = layout?.PageFrame;
+---
+
+{
+	Custom ? (
+		<Custom>
+			<slot name="header" slot="header" />
+			<slot />
+		</Custom>
+	) : (
+		<Default>
+			<slot name="header" slot="header" />
+			<slot name="sidebar" slot="sidebar" />
+			<slot />
+		</Default>
+	)
+}

@@ -1,0 +1,13 @@
+---
+// A responsive widget grid for `pageLayout: dashboard` pages. Pairs with
+// `Widget.astro` — see /guides/dashboard-widgets/ for usage tips.
+//
+// `print:grid-cols-1` drops back to a single column when printing: CSS
+// Grid pagination across physical page breaks is inconsistently supported
+// across print engines, while a plain vertical stack has mature,
+// predictable fragmentation behavior everywhere.
+---
+
+<div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 print:grid-cols-1">
+	<slot />
+</div>

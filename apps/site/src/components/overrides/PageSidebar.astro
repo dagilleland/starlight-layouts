@@ -1,0 +1,20 @@
+---
+// Override of `@astrojs/starlight/components/PageSidebar.astro`.
+//
+// A thin dispatcher, same shape as `PageFrame`: always renders Starlight's
+// own default table of contents, then additionally renders whatever
+// `PageSidebarExtra` component the active layout provides (if any). The
+// actual callout panel markup lives in `@starlight-layouts/layout-with-aside`,
+// not here.
+//
+// See: tutorial/composing-layout-packages.md
+import Default from '@astrojs/starlight/components/PageSidebar.astro';
+import { getLayout } from '../../layouts.config';
+
+const { entry } = Astro.locals.starlightRoute;
+const layout = getLayout(entry.data.pageLayout);
+const Extra = layout?.PageSidebarExtra;
+---
+
+<Default />
+{Extra && <Extra />}

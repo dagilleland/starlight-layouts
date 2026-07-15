@@ -1,0 +1,39 @@
+---
+// Override of `@astrojs/starlight/components/TwoColumnContent.astro`.
+//
+// Any layout marked `wide` in the registry (see `layouts.config.ts`) drops
+// the right-hand table of contents column and lets the main pane use the
+// full available width. This behavior is genuinely shared across layouts
+// rather than owned by any single package, so — unlike `PageFrame` — it
+// lives directly in this dispatcher instead of being delegated to a
+// per-layout component.
+//
+// See: tutorial/full-width-layout.md
+import Default from '@astrojs/starlight/components/TwoColumnContent.astro';
+import { getLayout } from '../../layouts.config';
+
+const { entry } = Astro.locals.starlightRoute;
+const layout = getLayout(entry.data.pageLayout);
+---
+
+{
+	layout?.wide ? (
+		<div class="main-pane main-pane--full">
+			<slot />
+		</div>
+	) : (
+		<Default>
+			<slot name="right-sidebar" slot="right-sidebar" />
+			<slot />
+		</Default>
+	)
+}
+
+<style>
+	@layer starlight.core {
+		.main-pane--full {
+			isolation: isolate;
+			width: 100%;
+		}
+	}
+</style>

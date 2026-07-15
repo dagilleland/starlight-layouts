@@ -1,0 +1,32 @@
+---
+title: Dashboard layout
+description: A demo page for the custom dashboard layout, combining a full-width content area with a grid of stat widgets.
+pageLayout: dashboard
+---
+
+import { DashboardGrid, Widget } from '@starlight-layouts/layout-dashboard';
+
+This page sets `pageLayout: dashboard`. The
+[`TwoColumnContent` override](/tutorial/full-width-layout/) drops the
+right-hand table of contents, same as [full-width](/demos/full-width/), and
+the [`ContentPanel` override](/tutorial/dashboard-layout/) removes
+Starlight's usual content-width cap so the grid below can spread across the
+full main pane. The left navigation sidebar stays, so this page is still
+reachable and browsable like any other.
+
+<DashboardGrid>
+	<Widget title="Monthly revenue" value="$48.2k" trend="up" delta="6.1% vs last month" wide>
+		Driven mostly by renewals; new-business bookings were flat.
+	</Widget>
+	<Widget title="Active users" value="2,481" trend="up" delta="4.2% vs last week" />
+	<Widget title="Error rate" value="0.8%" trend="down" delta="0.3pt vs last week" />
+	<Widget title="Open incidents" value="1" trend="flat" />
+	<Widget title="Avg response time" value="214ms" trend="down" delta="18ms vs yesterday" />
+	<Widget title="Deploys today" value="7" />
+	<Widget title="Support tickets" value="12" trend="up" delta="3 vs yesterday" />
+	<Widget title="Uptime (30d)" value="99.97%" />
+</DashboardGrid>
+
+For tips on deciding what goes in a widget, how many to put on one page,
+and when a number needs context, see
+[Filling a dashboard](/guides/dashboard-widgets/) under **Guides**.

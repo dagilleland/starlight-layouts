@@ -1,0 +1,25 @@
+---
+title: Splash layout (built-in)
+description: Starlight's own built-in template field, shown here for contrast with the custom `pageLayout` field used by the rest of this site.
+template: splash
+hero:
+  tagline: "This page uses Starlight's built-in `template: splash` frontmatter — no component override involved."
+  actions:
+    - text: Back to demos
+      link: /demos/default/
+      icon: left-arrow
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="note">
+	This layout comes from Starlight's own `template` frontmatter field, not
+	from anything in `src/components/overrides/`. It's included here as a
+	baseline: Starlight already ships one frontmatter-driven layout switch, and
+	the rest of this site's tutorial shows how to build more of your own using
+	the same idea.
+</Aside>
+
+The homepage of this site (`/`) also uses `template: splash`. Setting
+`template: doc` (or omitting it) goes back to the standard sidebar layout,
+same as the [default demo](/demos/default/).

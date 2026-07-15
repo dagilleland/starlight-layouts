@@ -1,0 +1,49 @@
+---
+// Override of `@astrojs/starlight/components/ContentPanel.astro`.
+//
+// Page.astro wraps both the page title and the main content in a
+// `ContentPanel`, whose `.sl-container` caps width at `--sl-content-width`
+// (45rem on this site, since a left sidebar is always configured) regardless
+// of how wide `TwoColumnContent`'s main pane actually is. Any layout marked
+// `wide` in the registry (see `layouts.config.ts`) needs that cap removed
+// too, or the width reclaimed by dropping the right column just sits empty.
+// Same shared-behavior reasoning as the `TwoColumnContent` dispatcher.
+//
+// See: tutorial/full-width-layout.md and tutorial/dashboard-layout.md
+import Default from '@astrojs/starlight/components/ContentPanel.astro';
+import { getLayout } from '../../layouts.config';
+
+const { entry } = Astro.locals.starlightRoute;
+const layout = getLayout(entry.data.pageLayout);
+---
+
+{
+	layout?.wide ? (
+		<div class="content-panel content-panel--uncapped">
+			<div class="uncapped-container">
+				<slot />
+			</div>
+		</div>
+	) : (
+		<Default>
+			<slot />
+		</Default>
+	)
+}
+
+<style>
+	@layer starlight.core {
+		.content-panel--uncapped {
+			padding: 1.5rem var(--sl-content-pad-x);
+		}
+		.content-panel--uncapped + .content-panel--uncapped {
+			border-top: 1px solid var(--sl-color-hairline);
+		}
+		.uncapped-container {
+			max-width: none;
+		}
+		.uncapped-container > :global(* + *) {
+			margin-top: 1.5rem;
+		}
+	}
+</style>

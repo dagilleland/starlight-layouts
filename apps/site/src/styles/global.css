@@ -1,0 +1,19 @@
+@layer base, starlight, theme, components, utilities;
+@import '@astrojs/starlight-tailwind';
+@import 'tailwindcss/theme.css' layer(theme);
+@import 'tailwindcss/utilities.css' layer(utilities);
+
+/*
+ * Tailwind's automatic content scanning only walks this app's own
+ * directory tree — it doesn't follow the pnpm-workspace symlinks that
+ * bring in `packages/layout-*`, so classes used only there (never quoted
+ * as literal text anywhere under apps/site) silently never get generated.
+ * Each layout package ships its own `tailwind.css` registering itself as a
+ * content source (resolved relative to the package, not this file), so
+ * this works the same way whether the package is a monorepo sibling or
+ * installed from npm. See tutorial/composing-layout-packages.md.
+ */
+@import '@starlight-layouts/layout-full-width/tailwind.css';
+@import '@starlight-layouts/layout-minimal/tailwind.css';
+@import '@starlight-layouts/layout-with-aside/tailwind.css';
+@import '@starlight-layouts/layout-dashboard/tailwind.css';

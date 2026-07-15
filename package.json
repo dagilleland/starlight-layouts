@@ -1,0 +1,11 @@
+{
+  "name": "starlight-layouts",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "pnpm --filter @starlight-layouts/site dev",
+    "build": "pnpm --filter @starlight-layouts/site build",
+    "preview": "pnpm --filter @starlight-layouts/site preview",
+    "astro": "pnpm --filter @starlight-layouts/site astro"
+  }
+}

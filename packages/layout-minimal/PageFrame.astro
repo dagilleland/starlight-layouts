@@ -1,0 +1,47 @@
+---
+// The `minimal` layout's replacement for Starlight's `PageFrame`: header
+// only, no left navigation sidebar. Rendered by the app's `PageFrame`
+// dispatcher (`apps/site/src/components/overrides/PageFrame.astro`) in
+// place of Starlight's own default whenever this layout is active — this
+// file only needs to handle its own markup, not the fallback branch.
+//
+// See: tutorial/minimal-layout.md
+---
+
+<div class="page sl-flex">
+	<header class="header"><slot name="header" /></header>
+	<div class="main-frame main-frame--minimal">
+		<slot />
+	</div>
+</div>
+
+<style>
+	@layer starlight.core {
+		.page {
+			flex-direction: column;
+			min-height: 100vh;
+		}
+		.header {
+			z-index: var(--sl-z-index-navbar);
+			position: fixed;
+			inset-inline-start: 0;
+			inset-block-start: 0;
+			width: 100%;
+			height: var(--sl-nav-height);
+			border-bottom: 1px solid var(--sl-color-hairline-shade);
+			padding: var(--sl-nav-pad-y) var(--sl-nav-pad-x);
+			background-color: var(--sl-color-bg-nav);
+		}
+		/*
+		 * Page.astro still sets `data-has-sidebar` on <html> whenever the
+		 * sidebar config has entries for this route, regardless of what we
+		 * render here — that attribute drives `--sl-content-inline-start`,
+		 * which would otherwise leave a sidebar-sized gap even though no
+		 * sidebar nav exists on this page. Zero it out explicitly.
+		 */
+		.main-frame--minimal {
+			padding-top: var(--sl-nav-height);
+			padding-inline-start: 0;
+		}
+	}
+</style>

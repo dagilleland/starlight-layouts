@@ -1,0 +1,51 @@
+---
+// A single dashboard stat tile. Use inside `<DashboardGrid>`.
+// See /guides/dashboard-widgets/ for tips on what makes a good widget.
+interface Props {
+	title: string;
+	value: string;
+	trend?: 'up' | 'down' | 'flat';
+	delta?: string;
+	/** Span 2 grid columns instead of 1, for a page's headline metric(s). */
+	wide?: boolean;
+}
+const { title, value, trend, delta, wide = false } = Astro.props;
+
+const trendColor =
+	trend === 'up'
+		? 'text-[var(--sl-color-green-high)]'
+		: trend === 'down'
+			? 'text-[var(--sl-color-red-high)]'
+			: 'text-[var(--sl-color-gray-3)]';
+const trendSymbol = trend === 'up' ? '▲' : trend === 'down' ? '▼' : '•';
+---
+
+<div
+	class:list={[
+		'rounded-lg border border-[var(--sl-color-hairline)] bg-[var(--sl-color-bg-sidebar)] p-4 print:break-inside-avoid',
+		/*
+		 * `print:col-span-1` resets the span for print regardless of `wide`:
+		 * DashboardGrid collapses to a single explicit column for print (see
+		 * DashboardGrid.astro), and print media typically still matches the
+		 * `sm:` breakpoint by page width, so a lingering `sm:col-span-2`
+		 * would ask for 2 columns inside a 1-column grid — Grid then
+		 * generates a malformed implicit second track to satisfy it.
+		 */
+		wide && 'sm:col-span-2 print:col-span-1',
+	]}
+>
+	<p class="m-0 text-xs font-medium uppercase tracking-wide text-[var(--sl-color-gray-3)]">
+		{title}
+	</p>
+	<p class="m-0 mt-2 text-3xl font-semibold text-[var(--sl-color-white)]">{value}</p>
+	{
+		delta && (
+			<p class={`m-0 mt-1 text-xs font-medium ${trendColor}`}>
+				{trendSymbol} {delta}
+			</p>
+		)
+	}
+	<div class="mt-3 text-sm text-[var(--sl-color-gray-2)] empty:mt-0">
+		<slot />
+	</div>
+</div>

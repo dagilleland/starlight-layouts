@@ -1,0 +1,68 @@
+---
+title: Starlight Layouts
+description: A tutorial and live demo site for overriding Starlight components to build custom page layouts.
+template: splash
+hero:
+  tagline: Learn how to override Starlight's components to build custom page layouts — without losing the defaults.
+  image:
+    file: ../../assets/undraw/undraw_design-components_c2hs.svg
+  actions:
+    - text: Start the tutorial
+      link: /tutorial/how-overrides-work/
+      icon: right-arrow
+    - text: Jump to the demos
+      link: /demos/default/
+      icon: laptop
+      variant: minimal
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+## What this site is
+
+Starlight ships a full documentation layout out of the box, and it also lets
+you **override** almost any piece of that layout with your own component.
+This site is both:
+
+- a **tutorial** that walks through how component overrides work, and how to
+  branch a single override so most pages keep Starlight's default layout
+  while a few pages opt into something custom, and
+- a **live demo** where each layout built in the tutorial has a real route
+  you can visit and compare side-by-side with the default.
+
+This very page is an example: it uses Starlight's built-in `template: splash`
+frontmatter field, no overrides required. The tutorial picks up from there.
+
+The project itself is a pnpm monorepo: this Starlight app lives in
+`apps/site`, and each of the four custom layouts is its own package under
+`packages/`. The tutorial builds up to that structure rather than assuming
+it — the [first few pages](/tutorial/how-overrides-work/) work the same
+whether your project is a monorepo or not.
+
+<CardGrid stagger>
+	<Card title="1. How overrides work" icon="puzzle">
+		Learn which components are overridable and the `Default` import pattern
+		that lets a custom component fall back to Starlight's own markup.
+	</Card>
+	<Card title="2. Conditional defaults" icon="setting">
+		Add a custom frontmatter field so a single override can serve both
+		default pages and custom-layout pages.
+	</Card>
+	<Card title="3–6. Build four layouts" icon="rocket">
+		Full-width, minimal (chrome-free), a two-column layout with an extra
+		aside panel, and a widget-grid dashboard — each with a matching demo
+		route.
+	</Card>
+	<Card title="See the demos" icon="open-book">
+		Every layout built in the tutorial has a page under **Layout demos** in
+		the sidebar so you can see it rendered for real.
+	</Card>
+	<Card title="Fill in a dashboard" icon="document">
+		Building the layout is only half the job — **Guides** covers what to
+		actually put inside a dashboard's widgets once you have the space.
+	</Card>
+	<Card title="7. Composing layout packages" icon="rocket">
+		How the four layouts became pnpm workspace packages, and how the app
+		composes them without Starlight ever knowing packages exist.
+	</Card>
+</CardGrid>

@@ -1,0 +1,35 @@
+---
+// The `with-aside` layout's addition to Starlight's `PageSidebar`: an extra
+// callout panel rendered *alongside* the normal table of contents, not in
+// place of it. Rendered by the app's `PageSidebar` dispatcher
+// (`apps/site/src/components/overrides/PageSidebar.astro`) after Starlight's
+// own default output, whenever this layout is active.
+//
+// See: tutorial/aside-layout.md
+import AsideCallout from './AsideCallout.astro';
+---
+
+<div class="extra-aside sl-hidden lg:sl-block">
+	<AsideCallout title="Layout tip">
+		This panel is rendered by our <code>PageSidebar</code> override — it
+		lives alongside the normal table of contents rather than replacing
+		it.
+	</AsideCallout>
+</div>
+
+<style>
+	.extra-aside {
+		/*
+		 * `.right-sidebar` (the ancestor Starlight renders our slot content
+		 * into) is `position: fixed; width: 100%` with no ancestor that
+		 * establishes a containing block for fixed-position elements, so
+		 * that 100% resolves against the viewport, not the visible sidebar
+		 * column. Starlight's own TOC content is immune because `.sl-container`
+		 * sets an explicit calculated width rather than a percentage — this
+		 * does the same, or the callout's text runs on well past the visible
+		 * column before wrapping.
+		 */
+		width: calc(var(--sl-sidebar-width) - 2 * var(--sl-sidebar-pad-x));
+		padding: 0 var(--sl-sidebar-pad-x) 1rem;
+	}
+</style>
