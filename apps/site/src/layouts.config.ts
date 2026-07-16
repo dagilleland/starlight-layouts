@@ -1,4 +1,4 @@
-// Assembles the full descriptor — metadata plus any bespoke component
+// Assembles the full descriptor — metadata plus any custom component
 // references — for every installed layout package. Only the four override
 // dispatchers under `src/components/overrides/` import this file; the
 // content schema imports `layouts.meta.ts` instead (see that file for why).

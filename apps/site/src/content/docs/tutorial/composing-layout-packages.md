@@ -142,7 +142,7 @@ pnpm resolves to the local package regardless of any published version:
 
 ## Tailwind classes that travel with the package
 
-Every bespoke component in these packages — `AsideCallout`, `Widget`,
+Every custom component in these packages — `AsideCallout`, `Widget`,
 `DashboardGrid`, `PageFrame` — is styled with Tailwind utility classes.
 That created a real bug the first time this project moved from a single
 app to a monorepo: Tailwind's automatic content scanning only walks the
@@ -201,7 +201,7 @@ Say you wanted a `layout: split` that shows two columns of content
 side by side. The work is entirely additive:
 
 1. `packages/layout-split/` — `layout.meta.ts` (`{ id: 'split' }`, plus
-   whatever traits it needs), `index.ts`, any bespoke component(s), and a
+   whatever traits it needs), `index.ts`, any custom component(s), and a
    `tailwind.css` if it uses Tailwind classes.
 2. Add it to `apps/site/package.json`'s dependencies.
 3. Add one import + one array entry to `apps/site/src/layouts.meta.ts`.
