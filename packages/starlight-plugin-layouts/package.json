@@ -1,6 +1,6 @@
 {
   "name": "@dagilleland/starlight-plugin-layouts",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Starlight plugin that bundles all four Starlight Layouts packages and registers their component overrides automatically — no override files to create.",
   "type": "module",
   "license": "MIT",
@@ -27,6 +27,9 @@
     ".": "./index.ts",
     "./meta": "./layouts.meta.ts",
     "./*": "./*"
+  },
+  "scripts": {
+    "release": "node publish.mjs"
   },
   "dependencies": {
     "@dagilleland/layout-full-width": "workspace:*",

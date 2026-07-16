@@ -20,5 +20,8 @@ pnpm-debug.log*
 # macOS-specific files
 .DS_Store
 
+# transient backup from packages/starlight-plugin-layouts/publish.mjs
+*.bak
+
 # Claude Code local/personal settings (project-level .claude/launch.json is still tracked)
 .claude/settings.local.json
