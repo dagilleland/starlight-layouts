@@ -116,7 +116,10 @@ ships. Its `package.json` exports both a barrel and raw file access:
     "./meta": "./layout.meta.ts",
     "./*": "./*"
   },
-  "peerDependencies": { "astro": "^7.0.2" }
+  "peerDependencies": {
+    "astro": "^6.4.5 || ^7.0.2",
+    "@astrojs/starlight": ">=0.40.0 <0.42.0"
+  }
 }
 ```
 

@@ -1,6 +1,6 @@
 {
   "name": "@dagilleland/layout-with-aside",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Starlight layout that adds a callout panel alongside the default table of contents, without replacing it. One of four layout packages from Starlight Layouts.",
   "type": "module",
   "license": "MIT",
@@ -27,6 +27,7 @@
     "./*": "./*"
   },
   "peerDependencies": {
-    "astro": "^7.0.2"
+    "astro": "^6.4.5 || ^7.0.2",
+    "@astrojs/starlight": ">=0.40.0 <0.42.0"
   }
 }

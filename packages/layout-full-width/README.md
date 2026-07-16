@@ -2,6 +2,10 @@
 
 Part of [Starlight Layouts](https://gilleland.ca/starlight-layouts/) — a tutorial site for overriding Starlight components to build custom page layouts. This is the simplest of the four layouts it builds: it drops a page's right-hand table of contents and lets the main content pane use the full available width.
 
+## Compatibility
+
+Works with **Astro 6.4.5+ or 7.x**, and **Starlight 0.40.0–0.41.x** — enforced by this package's own `peerDependencies`, and confirmed by actually building and rendering a test project against both ends of that range (Astro 6.4.8/Starlight 0.40.0, and Astro 7.0.9/Starlight 0.41.3), not just inferred from the declared versions.
+
 ## What's here
 
 - `layout.meta.ts` — `{ id: 'full-width', wide: true }`. That's the whole package.

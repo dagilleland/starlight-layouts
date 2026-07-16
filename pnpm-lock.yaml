@@ -43,30 +43,45 @@ importers:
 
   packages/layout-dashboard:
     dependencies:
+      '@astrojs/starlight':
+        specifier: '>=0.40.0 <0.42.0'
+        version: 0.41.3(@astrojs/markdown-remark@7.2.1)(astro@7.0.9(@astrojs/markdown-remark@7.2.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@24.13.3)(jiti@2.7.0))
       astro:
-        specifier: ^7.0.2
+        specifier: ^6.4.5 || ^7.0.2
         version: 7.0.9(@astrojs/markdown-remark@7.2.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@24.13.3)(jiti@2.7.0)
 
   packages/layout-full-width:
     dependencies:
+      '@astrojs/starlight':
+        specifier: '>=0.40.0 <0.42.0'
+        version: 0.41.3(@astrojs/markdown-remark@7.2.1)(astro@7.0.9(@astrojs/markdown-remark@7.2.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@24.13.3)(jiti@2.7.0))
       astro:
-        specifier: ^7.0.2
+        specifier: ^6.4.5 || ^7.0.2
         version: 7.0.9(@astrojs/markdown-remark@7.2.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@24.13.3)(jiti@2.7.0)
 
   packages/layout-minimal:
     dependencies:
+      '@astrojs/starlight':
+        specifier: '>=0.40.0 <0.42.0'
+        version: 0.41.3(@astrojs/markdown-remark@7.2.1)(astro@7.0.9(@astrojs/markdown-remark@7.2.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@24.13.3)(jiti@2.7.0))
       astro:
-        specifier: ^7.0.2
+        specifier: ^6.4.5 || ^7.0.2
         version: 7.0.9(@astrojs/markdown-remark@7.2.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@24.13.3)(jiti@2.7.0)
 
   packages/layout-with-aside:
     dependencies:
+      '@astrojs/starlight':
+        specifier: '>=0.40.0 <0.42.0'
+        version: 0.41.3(@astrojs/markdown-remark@7.2.1)(astro@7.0.9(@astrojs/markdown-remark@7.2.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@24.13.3)(jiti@2.7.0))
       astro:
-        specifier: ^7.0.2
+        specifier: ^6.4.5 || ^7.0.2
         version: 7.0.9(@astrojs/markdown-remark@7.2.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@24.13.3)(jiti@2.7.0)
 
   packages/starlight-plugin-layouts:
     dependencies:
+      '@astrojs/starlight':
+        specifier: '>=0.40.0 <0.42.0'
+        version: 0.41.3(@astrojs/markdown-remark@7.2.1)(astro@7.0.9(@astrojs/markdown-remark@7.2.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@24.13.3)(jiti@2.7.0))
       '@dagilleland/layout-dashboard':
         specifier: workspace:*
         version: link:../layout-dashboard
@@ -80,7 +95,7 @@ importers:
         specifier: workspace:*
         version: link:../layout-with-aside
       astro:
-        specifier: ^7.0.2
+        specifier: ^6.4.5 || ^7.0.2
         version: 7.0.9(@astrojs/markdown-remark@7.2.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@24.13.3)(jiti@2.7.0)
 
 packages:

@@ -7,6 +7,8 @@ Each layout is published as its own package under the `@dagilleland` scope. This
 
 Want all four layouts with the least setup, and don't need to read the override code? [Install all four (plugin)](/starlight-layouts/install/plugin/) does the wiring below for you, from a single `plugins: [...]` line. This page is for installing individual packages — pick one layout, or a subset, and wire each up yourself.
 
+**Compatibility:** every layout works with Astro 6.4.5+ or 7.x, and Starlight 0.40.0–0.41.x — enforced by each package's own `peerDependencies`, and confirmed by actually building against both ends of that range, not just inferred from the declared versions.
+
 ## tl;dr
 
 ```sh

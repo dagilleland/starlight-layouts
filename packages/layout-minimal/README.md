@@ -2,6 +2,10 @@
 
 Part of [Starlight Layouts](https://gilleland.ca/starlight-layouts/) — a tutorial site for overriding Starlight components to build custom page layouts. This layout strips a page down to just the header and content: no left navigation sidebar, no right-hand table of contents. Useful for standalone pages — a print view, an embed, a one-off landing section — that shouldn't feel like part of the docs tree.
 
+## Compatibility
+
+Works with **Astro 6.4.5+ or 7.x**, and **Starlight 0.40.0–0.41.x** — enforced by this package's own `peerDependencies`, and confirmed by actually building and rendering a test project against both ends of that range (Astro 6.4.8/Starlight 0.40.0, and Astro 7.0.9/Starlight 0.41.3), not just inferred from the declared versions.
+
 ## What's here
 
 - `layout.meta.ts` — `{ id: 'minimal', wide: true }`.

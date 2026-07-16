@@ -5,6 +5,8 @@ description: How to copy a layout's files out of this repository by hand and ada
 
 If you're not on pnpm (e.g.: npm, yarn, bun, etc.), or you'd rather own the code outright — modify it freely, with no git dependency quietly tracking someone else's branch — copying the files in by hand works too. It's more manual than [installing via pnpm](/starlight-layouts/install/pnpm/), but it works with any package manager, or none at all. If you don't need to own or modify the code, [installing via npm](/starlight-layouts/install/npm/) or [via plugin](/starlight-layouts/install/plugin/) is far less manual.
 
+**Compatibility:** the code itself works with Astro 6.4.5+ or 7.x, and Starlight 0.40.0–0.41.x — since you're copying the files directly, there's no `peerDependencies` check enforcing this for you, so double-check your own project's versions fall in that range.
+
 ## What "copying a layout" actually involves
 
 Worth knowing before you start: **not every layout is a drop-in copy.** Each package only contains its own custom piece — a component, or just metadata. The thing that actually makes a layout *do* something on a Starlight site — the override component that decides when to use it, a content-schema field, registering it in `astro.config.mjs` — lives in this project's app, not in the package. [Composing layout packages](/starlight-layouts/tutorial/composing-layout-packages/) covers why that split exists in full.

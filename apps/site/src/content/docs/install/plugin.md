@@ -16,6 +16,11 @@ already overriding `PageFrame`, `TwoColumnContent`, `PageSidebar`, or
 `ContentPanel` yourself (or via another plugin), and you don't need to read
 or modify the override code.
 
+**Compatibility:** works with Astro 6.4.5+ or 7.x, and Starlight 0.40.0–0.41.x —
+enforced by this package's own `peerDependencies`, and confirmed by actually
+building against both ends of that range, not just inferred from the
+declared versions.
+
 **Use [Install layouts via npm](/starlight-layouts/install/npm/) instead if:** you want
 just one layout, already have a conflicting override, or want the code
 sitting in your own project. See [Plugin or standalone layouts?](/starlight-layouts/guides/plugin-or-standalone/)

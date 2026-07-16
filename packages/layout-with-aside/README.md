@@ -2,6 +2,10 @@
 
 Part of [Starlight Layouts](https://gilleland.ca/starlight-layouts/) — a tutorial site for overriding Starlight components to build custom page layouts. Unlike the other three layouts in this family, this one doesn't remove anything from Starlight's default page — it *adds* a callout panel to the right-hand column, alongside the normal table of contents rather than in place of it.
 
+## Compatibility
+
+Works with **Astro 6.4.5+ or 7.x**, and **Starlight 0.40.0–0.41.x** — enforced by this package's own `peerDependencies`, and confirmed by actually building and rendering a test project against both ends of that range (Astro 6.4.8/Starlight 0.40.0, and Astro 7.0.9/Starlight 0.41.3), not just inferred from the declared versions.
+
 ## What's here
 
 - `layout.meta.ts` — `{ id: 'with-aside' }`. No `wide` flag: this layout keeps Starlight's default two-column width, it only adds a panel to the existing right column.

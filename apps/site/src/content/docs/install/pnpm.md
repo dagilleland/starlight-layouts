@@ -7,6 +7,8 @@ Each layout is also published on npm, and [installing via npm](/starlight-layout
 
 If you're cloning or forking the whole project instead — to follow the tutorial, or run the demo site yourself — the packages are already wired together via `workspace:*`; see [Composing layout packages](/starlight-layouts/tutorial/composing-layout-packages/) for how that fits together.
 
+**Compatibility:** every layout works with Astro 6.4.5+ or 7.x, and Starlight 0.40.0–0.41.x, same as installing via npm.
+
 ## tl;dr
 
 Already know this page, just here to grab the commands for a new project? Run all four:

@@ -2,6 +2,10 @@
 
 Part of [Starlight Layouts](https://gilleland.ca/starlight-layouts/) — a tutorial site for overriding Starlight components to build custom page layouts. This package bundles all four layouts (`@dagilleland/layout-full-width`, `layout-minimal`, `layout-with-aside`, `layout-dashboard`) as a single Starlight plugin, so installing it wires up all four dispatcher overrides automatically — no override files to create by hand.
 
+## Compatibility
+
+Works with **Astro 6.4.5+ or 7.x**, and **Starlight 0.40.0–0.41.x** — enforced by this package's own `peerDependencies`, and confirmed by actually building and rendering a test project against both ends of that range (Astro 6.4.8/Starlight 0.40.0, and Astro 7.0.9/Starlight 0.41.3), not just inferred from the declared versions.
+
 ## What's here
 
 - `layouts.meta.ts` / `layouts.config.ts` — the same registry pattern as the tutorial site's own `apps/site/src/layouts.config.ts`, importing all four layout packages by their published names.

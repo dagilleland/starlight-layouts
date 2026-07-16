@@ -1,6 +1,6 @@
 {
   "name": "@dagilleland/layout-minimal",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Starlight layout that strips a page down to just header and content — no navigation sidebar, no table of contents. One of four layout packages from Starlight Layouts.",
   "type": "module",
   "license": "MIT",
@@ -27,6 +27,7 @@
     "./*": "./*"
   },
   "peerDependencies": {
-    "astro": "^7.0.2"
+    "astro": "^6.4.5 || ^7.0.2",
+    "@astrojs/starlight": ">=0.40.0 <0.42.0"
   }
 }
