@@ -70,7 +70,7 @@ assembles `PageFrame`, `TwoColumnContent`, and everything else) sets a
 `data-has-sidebar` attribute on `<html>` based on whether the sidebar
 config has entries for the current route:
 
-```astro
+```astro title="@astrojs/starlight/components/Page.astro (excerpt)"
 const htmlDataAttributes = {};
 if (starlightRoute.hasSidebar) htmlDataAttributes['data-has-sidebar'] = '';
 ```
@@ -83,7 +83,7 @@ would show a sidebar-sized gap on the left with nothing in it.
 The fix is a scoped CSS override, shipped alongside the markup above in
 the same package file (`packages/layout-minimal/PageFrame.astro`):
 
-```astro
+```astro title="packages/layout-minimal/PageFrame.astro (continued)"
 <style>
   @layer starlight.core {
     .main-frame--minimal {

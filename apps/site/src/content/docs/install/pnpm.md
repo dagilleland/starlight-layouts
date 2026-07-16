@@ -18,7 +18,7 @@ pnpm add "github:dagilleland/starlight-layouts#main&path:packages/layout-with-as
 pnpm add "github:dagilleland/starlight-layouts#main&path:packages/layout-dashboard"
 ```
 
-Only want a subset? Drop whichever lines you don't need — see [Installing more than one](#installing-more-than-one). Each package's README (installed alongside its code) has the wiring steps for that specific layout — see [What you get, and what you still have to do](#what-you-get-and-what-you-still-have-to-do).
+Only want a subset? Drop whichever lines you don't need — see [Installing more than one](#installing-more-than-one). A dedicated wire-up page has the steps for each specific layout — see [What you get, and what you still have to do](#what-you-get-and-what-you-still-have-to-do).
 
 ## This requires pnpm specifically
 
@@ -68,7 +68,7 @@ You're never forced to take all four "as a set."
 
 This installs the package's raw source — the same `.astro`/`.ts` files you'd find in the repo, no build step, the same way this project's own app consumes `@astrojs/starlight-tailwind`. What it does **not** do is wire the layout into your Starlight site: registering an override component, adding a content-schema field, and so on are still manual steps.
 
-Each package's own README covers exactly that, and it installs right alongside the code — open `node_modules/@dagilleland/<package-name>/README.md` after installing, or read it on GitHub first: [`layout-full-width`](https://github.com/dagilleland/starlight-layouts/tree/main/packages/layout-full-width#readme), [`layout-minimal`](https://github.com/dagilleland/starlight-layouts/tree/main/packages/layout-minimal#readme), [`layout-with-aside`](https://github.com/dagilleland/starlight-layouts/tree/main/packages/layout-with-aside#readme), [`layout-dashboard`](https://github.com/dagilleland/starlight-layouts/tree/main/packages/layout-dashboard#readme).
+A dedicated page covers exactly that for each layout, with a title on every code block showing which file it goes in: [Wire up: full-width](/starlight-layouts/install/wire-full-width/), [Wire up: minimal](/starlight-layouts/install/wire-minimal/), [Wire up: with-aside](/starlight-layouts/install/wire-with-aside/), [Wire up: dashboard](/starlight-layouts/install/wire-dashboard/).
 
 ## Pin a version instead of tracking `main`
 

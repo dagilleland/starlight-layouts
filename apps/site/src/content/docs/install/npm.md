@@ -32,14 +32,36 @@ The four package names:
 
 ## What you get, and what you still have to do
 
-Same as any install method for these packages: you get the raw `.astro`/`.ts` source (no build step), but wiring the layout into your Starlight site — an override component, a content-schema field, registering it in `astro.config.mjs` — is still a manual step specific to each layout. Each package's README covers exactly that, and it's included in what you just installed:
+Every package installs the same way: raw `.astro`/`.ts` source, no build step. What's still manual is different per layout — here's exactly what each one needs, not a generic "some wiring required":
+
+| Layout | You still have to add | Full steps |
+| --- | --- | --- |
+| `layout-dashboard` widgets | Nothing — see [below](#the-one-case-with-zero-wiring) | — |
+| `layout-full-width` | `TwoColumnContent` override, `ContentPanel` override, 1 content-schema field | [Wire up: full-width →](/starlight-layouts/install/wire-full-width/) |
+| `layout-minimal` | `PageFrame` override, `TwoColumnContent` override, `ContentPanel` override, 1 content-schema field | [Wire up: minimal →](/starlight-layouts/install/wire-minimal/) |
+| `layout-with-aside` | `PageSidebar` override, 1 content-schema field | [Wire up: with-aside →](/starlight-layouts/install/wire-with-aside/) |
+| `layout-dashboard`'s full-width treatment | Same as `layout-full-width`, above | [Wire up: dashboard →](/starlight-layouts/install/wire-dashboard/) |
+
+Each linked page has the exact code for every step, with a title on every code block showing exactly which file it goes in — not a description of what to write.
+
+### The one case with zero wiring
+
+`layout-dashboard`'s `DashboardGrid` and `Widget` aren't Starlight overrides — they're ordinary components, usable the moment they're installed:
 
 ```sh
-# after installing, read it locally:
-cat node_modules/@dagilleland/layout-dashboard/README.md
+npm install @dagilleland/layout-dashboard
 ```
 
-Or read it on the [npm package page](https://www.npmjs.com/package/@dagilleland/layout-dashboard) or [on GitHub](https://github.com/dagilleland/starlight-layouts/tree/main/packages/layout-dashboard#readme) before installing.
+```mdx title="src/content/docs/some-page.mdx"
+import { DashboardGrid, Widget } from '@dagilleland/layout-dashboard';
+
+<DashboardGrid>
+  <Widget title="Active users" value="2,481" trend="up" delta="4.2% vs last week" />
+  <Widget title="Error rate" value="0.8%" trend="down" delta="0.3pt vs last week" />
+</DashboardGrid>
+```
+
+Drop that into any `.mdx` page and it renders — no frontmatter field, no override, no `astro.config.mjs` change. That's genuinely the whole thing for this one case; every other row in the table above needs its linked wire-up page.
 
 ## When you'd want a different method instead
 

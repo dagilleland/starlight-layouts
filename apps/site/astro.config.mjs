@@ -29,6 +29,15 @@ export default defineConfig({
 						{ label: 'Install layouts via npm', slug: 'install/npm' },
 						{ label: 'Install layouts via pnpm', slug: 'install/pnpm' },
 						{ label: 'Manually copying layouts', slug: 'install/manual-copy' },
+						{
+							label: 'Wire up a layout',
+							items: [
+								{ label: 'Full-width', slug: 'install/wire-full-width' },
+								{ label: 'Minimal', slug: 'install/wire-minimal' },
+								{ label: 'With aside', slug: 'install/wire-with-aside' },
+								{ label: 'Dashboard', slug: 'install/wire-dashboard' },
+							],
+						},
 					],
 				},
 				{

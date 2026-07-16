@@ -12,7 +12,7 @@ Worth knowing before you start: **not every layout is a drop-in copy.** Each pac
 In practice that means:
 
 - **Dashboard's `DashboardGrid`/`Widget`** are usable the moment you copy them in — they're just Astro components, no wiring required. This page walks through that case fully, below.
-- **The other three layouts** (full-width, minimal, with-aside) need you to also write a small override component and register it — copying the file alone leaves it inert. Each package's own README has the exact code for its layout; see the links at the bottom of this page.
+- **The other three layouts** (full-width, minimal, with-aside) need you to also write a small override component and register it — copying the file alone leaves it inert. A dedicated wire-up page has the exact code for each layout; see the links at the bottom of this page.
 
 ## Getting the files
 
@@ -46,7 +46,7 @@ This is the layout that needs no wiring at all — a genuinely complete example,
 1. Grab the two files using either option above, and save them into your project — say, `src/components/DashboardGrid.astro` and `src/components/Widget.astro`.
 2. Import and use them in any `.mdx` page:
 
-   ```mdx
+   ```mdx title="src/content/docs/some-page.mdx"
    import DashboardGrid from '../../components/DashboardGrid.astro';
    import Widget from '../../components/Widget.astro';
 
@@ -56,13 +56,13 @@ This is the layout that needs no wiring at all — a genuinely complete example,
    </DashboardGrid>
    ```
 
-That's it — no frontmatter field, no override, no `astro.config.mjs` change. The grid renders inside your page's normal content column. If you also want the full-width, no-table-of-contents treatment the demo page uses, that part *does* need wiring — see the [`layout-dashboard` README](https://github.com/dagilleland/starlight-layouts/tree/main/packages/layout-dashboard#readme) for the two extra overrides involved.
+That's it — no frontmatter field, no override, no `astro.config.mjs` change. The grid renders inside your page's normal content column. If you also want the full-width, no-table-of-contents treatment the demo page uses, that part *does* need wiring — see [Wire up: dashboard](/starlight-layouts/install/wire-dashboard/) for the two extra overrides involved.
 
 ## The other three layouts
 
-Each needs an override component copied in alongside its layout package, plus a few lines of registration. Rather than repeat it here, follow the copy-paste instructions in the package's own README — they're written for exactly this situation:
+Each needs an override component copied in alongside its layout package, plus a few lines of registration. A dedicated page covers exactly that for each one, with a title on every code block showing which file it goes in:
 
-- [`layout-full-width`](https://github.com/dagilleland/starlight-layouts/tree/main/packages/layout-full-width#readme)
-- [`layout-minimal`](https://github.com/dagilleland/starlight-layouts/tree/main/packages/layout-minimal#readme)
-- [`layout-with-aside`](https://github.com/dagilleland/starlight-layouts/tree/main/packages/layout-with-aside#readme)
-- [`layout-dashboard`](https://github.com/dagilleland/starlight-layouts/tree/main/packages/layout-dashboard#readme) (for the full-width treatment beyond the widgets alone)
+- [Wire up: full-width](/starlight-layouts/install/wire-full-width/)
+- [Wire up: minimal](/starlight-layouts/install/wire-minimal/)
+- [Wire up: with-aside](/starlight-layouts/install/wire-with-aside/)
+- [Wire up: dashboard](/starlight-layouts/install/wire-dashboard/) (for the full-width treatment beyond the widgets alone)

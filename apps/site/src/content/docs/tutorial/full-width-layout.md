@@ -15,7 +15,7 @@ See it live: [`/demos/full-width/`](/starlight-layouts/demos/full-width/).
 Looking at Starlight's default `Page` composition, the right-hand column
 comes from `TwoColumnContent`, not `PageFrame`:
 
-```
+```text title="@astrojs/starlight/components/Page.astro (composition, simplified)"
 PageFrame
 ├─ Header          (slot="header")
 ├─ Sidebar         (slot="sidebar", left nav)
