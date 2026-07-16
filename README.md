@@ -78,6 +78,26 @@ To run a command against a single package directly, use
 `pnpm --filter <package-name> <command>` — e.g.
 `pnpm --filter @starlight-layouts/layout-dashboard ...`.
 
+## Deployment
+
+Deploys to GitHub Pages via `.github/workflows/deploy.yml` on every push to
+`main`. Two things about this repo's setup are worth knowing if you're
+adapting it:
+
+- **This repo doesn't own its custom domain.** `dagilleland.github.io` (a
+  separate repo) holds the `CNAME` for `gilleland.ca`; this project repo
+  rides along underneath it at `gilleland.ca/starlight-layouts/` without a
+  `CNAME` of its own. That's why `astro.config.mjs` sets `site` to the bare
+  origin (`https://gilleland.ca/`) *and* keeps `base: '/starlight-layouts'`
+  — Astro's own guide treats "custom domain" and "subpath" as mutually
+  exclusive cases, but an account where a different repo already owns the
+  domain needs both at once.
+- **Internal links are absolute, with the base baked in by hand**
+  (`/starlight-layouts/tutorial/...`), not relative. Starlight's own
+  sidebar/pagination links get `base` applied automatically from their
+  `slug`; anything hand-typed — Markdown links, the homepage hero's
+  `actions[].link` — doesn't, and needs the prefix written out.
+
 ## Learn more
 
 [Starlight's own docs on overriding components](https://starlight.astro.build/guides/overriding-components/)

@@ -5,9 +5,9 @@ pageLayout: full-width
 ---
 
 This page sets `pageLayout: full-width` in its frontmatter. The
-[`TwoColumnContent` override](/tutorial/full-width-layout/) reads that
+[`TwoColumnContent` override](/starlight-layouts/tutorial/full-width-layout/) reads that
 value and skips rendering the right-hand table of contents column, and the
-[`ContentPanel` override](/tutorial/dashboard-layout/) removes Starlight's
+[`ContentPanel` override](/starlight-layouts/tutorial/dashboard-layout/) removes Starlight's
 usual content-width cap so the content below actually fills the space that
 frees up, rather than leaving it empty. The left navigation sidebar is
 unaffected.
@@ -16,7 +16,7 @@ unaffected.
 
 Wide tables, side-by-side code comparisons, and diagrams often fight with a
 fixed-width content column. Compare this table to how cramped it would feel
-on the [default layout](/demos/default/):
+on the [default layout](/starlight-layouts/demos/default/):
 
 | Method       | Left sidebar | Right TOC | Content width | Typical use              |
 | ------------ | ------------ | --------- | -------------- | ------------------------- |

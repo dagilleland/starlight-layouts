@@ -6,19 +6,19 @@ description: "A close look at the ContentPanel override that removes Starlight's
 The **dashboard** layout keeps the left navigation sidebar (so a dashboard
 stays part of the docs tree, reachable like any other page) and drops the
 right-hand table of contents — the same `wide: true` flag set by
-[full-width](/tutorial/full-width-layout/) and
-[minimal](/tutorial/minimal-layout/). What's actually new here isn't an
+[full-width](/starlight-layouts/tutorial/full-width-layout/) and
+[minimal](/starlight-layouts/tutorial/minimal-layout/). What's actually new here isn't an
 override exclusive to dashboards — it's a width cap that every `wide`
 layout needed removed, but that only becomes obvious once there's a widget
 grid trying to use the space.
 
-See it live: [`/demos/dashboard/`](/demos/dashboard/).
+See it live: [`/demos/dashboard/`](/starlight-layouts/demos/dashboard/).
 
 ## The width cap nothing else touched
 
 Every layout built so far assumed that once the right TOC column was gone,
 the main content pane's `width: 100%` (from the
-[`TwoColumnContent` override](/tutorial/full-width-layout/)) was the end of
+[`TwoColumnContent` override](/starlight-layouts/tutorial/full-width-layout/)) was the end of
 the story. It isn't. Starlight wraps page content — twice, once for the
 title and once for the body — in `ContentPanel`, and `ContentPanel` applies
 its own cap regardless of how wide its parent is:
@@ -76,7 +76,7 @@ const layout = getLayout(entry.data.pageLayout);
 </style>
 ```
 
-Same `layout?.wide` check as [`TwoColumnContent`](/tutorial/full-width-layout/),
+Same `layout?.wide` check as [`TwoColumnContent`](/starlight-layouts/tutorial/full-width-layout/),
 via the same registry. Registered in `astro.config.mjs` alongside the
 others:
 
@@ -121,10 +121,10 @@ directly, the same way you'd import any component from any npm package.
 `DashboardGrid` is a responsive CSS grid (via Tailwind), and `Widget` is a
 single stat tile — both are plain Astro components styled with Tailwind,
 following the same "net-new UI reaches for Tailwind" convention introduced
-in the [aside layout](/tutorial/aside-layout/) tutorial. Deciding what
+in the [aside layout](/starlight-layouts/tutorial/aside-layout/) tutorial. Deciding what
 actually belongs inside a widget — and how many to put on one page — is a
 content question, not a component-override one, and gets its own page:
-[Filling a dashboard](/guides/dashboard-widgets/) under **Guides**.
+[Filling a dashboard](/starlight-layouts/guides/dashboard-widgets/) under **Guides**.
 
 ## Set on a page
 
@@ -139,7 +139,7 @@ This demo page is the one place on this site where the field's name
 actually matters: it's an `.mdx` file (needed to import `DashboardGrid`
 and `Widget` as components), and `.mdx` files are exactly where a field
 named `layout` would collide with `@astrojs/mdx`'s own reserved frontmatter
-key — see the [note in the previous tutorial page](/tutorial/conditional-defaults/)
+key — see the [note in the previous tutorial page](/starlight-layouts/tutorial/conditional-defaults/)
 for what that collision looks like when it fails.
 
 Everything else — headings, code blocks, the left sidebar — stays exactly

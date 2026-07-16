@@ -9,12 +9,12 @@ The first two layouts *removed* pieces of the default page. This one
 contents, plus a callout panel underneath it. This page uses that layout
 itself — look at the right-hand column now.
 
-See it live: [`/demos/with-aside/`](/demos/with-aside/).
+See it live: [`/demos/with-aside/`](/starlight-layouts/demos/with-aside/).
 
 ## Why `PageSidebar`
 
 The right column's *content* — as opposed to the two-column arrangement
-itself, covered by [`TwoColumnContent`](/tutorial/full-width-layout/) — is
+itself, covered by [`TwoColumnContent`](/starlight-layouts/tutorial/full-width-layout/) — is
 rendered by `PageSidebar`. Overriding it means we can render Starlight's
 own `PageSidebar` for the table of contents and simply put more markup
 after it.
@@ -41,7 +41,7 @@ Unlike the `PageFrame` and `TwoColumnContent` overrides, this one doesn't
 branch between "custom component" and "`<Default>`" — it **always** renders
 `<Default />`, and conditionally renders something extra alongside it. Both
 are valid uses of the same `Default`-import pattern from
-[the first tutorial page](/tutorial/how-overrides-work/): branching to
+[the first tutorial page](/starlight-layouts/tutorial/how-overrides-work/): branching to
 replace, or unconditionally rendering the default and layering on top.
 
 The actual callout panel — the part that matters for this layout — lives
@@ -59,7 +59,7 @@ import AsideCallout from './AsideCallout.astro';
 </div>
 ```
 
-[Composing layout packages](/tutorial/composing-layout-packages/) covers
+[Composing layout packages](/starlight-layouts/tutorial/composing-layout-packages/) covers
 why the dispatcher and the layout's actual markup live in different places.
 
 ## `AsideCallout`, a plain component

@@ -10,11 +10,11 @@ content width.
 
 Use it as the baseline to compare against the other demos:
 
-- [Splash](/demos/splash/) — Starlight's own built-in full-width template.
-- [Full-width](/demos/full-width/) — keeps the left sidebar, drops the TOC.
-- [Minimal](/demos/minimal/) — drops both sidebar and TOC.
-- [With aside](/demos/with-aside/) — keeps everything, adds an extra panel.
-- [Dashboard](/demos/dashboard/) — keeps the left sidebar, drops the TOC,
+- [Splash](/starlight-layouts/demos/splash/) — Starlight's own built-in full-width template.
+- [Full-width](/starlight-layouts/demos/full-width/) — keeps the left sidebar, drops the TOC.
+- [Minimal](/starlight-layouts/demos/minimal/) — drops both sidebar and TOC.
+- [With aside](/starlight-layouts/demos/with-aside/) — keeps everything, adds an extra panel.
+- [Dashboard](/starlight-layouts/demos/dashboard/) — keeps the left sidebar, drops the TOC,
   fills the reclaimed width with a widget grid.
 
 ## Some content to scroll through

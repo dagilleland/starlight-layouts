@@ -6,11 +6,11 @@ pageLayout: minimal
 
 This page sets `pageLayout: minimal`. Three overrides react to it at once:
 
-- [`PageFrame`](/tutorial/minimal-layout/) skips rendering the left
+- [`PageFrame`](/starlight-layouts/tutorial/minimal-layout/) skips rendering the left
   navigation sidebar entirely.
-- [`TwoColumnContent`](/tutorial/full-width-layout/) skips the right-hand
-  table of contents, same as the [full-width demo](/demos/full-width/).
-- [`ContentPanel`](/tutorial/dashboard-layout/) removes Starlight's usual
+- [`TwoColumnContent`](/starlight-layouts/tutorial/full-width-layout/) skips the right-hand
+  table of contents, same as the [full-width demo](/starlight-layouts/demos/full-width/).
+- [`ContentPanel`](/starlight-layouts/tutorial/dashboard-layout/) removes Starlight's usual
   content-width cap, so this text fills the width freed up by dropping
   both sidebars instead of sitting in a narrow column with empty space on
   either side.
@@ -29,4 +29,4 @@ navigation chrome pulling focus away.
 ## Getting back
 
 There's no sidebar here to click through, so here's a link back to the
-[default layout demo](/demos/default/) instead.
+[default layout demo](/starlight-layouts/demos/default/) instead.

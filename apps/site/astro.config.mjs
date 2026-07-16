@@ -5,13 +5,15 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
+	site: 'https://gilleland.ca/',
+	base: '/starlight-layouts',
 	integrations: [
 		starlight({
 			title: 'Starlight Layouts',
 			description:
 				'A tutorial and live demo site for overriding Starlight components to build custom page layouts.',
 			social: [
-				{ icon: 'github', label: 'GitHub', href: 'https://github.com/withastro/starlight' },
+				{ icon: 'github', label: 'GitHub', href: 'https://github.com/dagilleland/starlight-layouts' },
 			],
 			customCss: ['./src/styles/global.css'],
 			components: {

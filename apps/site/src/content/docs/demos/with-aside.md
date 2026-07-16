@@ -5,13 +5,13 @@ pageLayout: with-aside
 ---
 
 This page sets `pageLayout: with-aside`. The
-[`PageSidebar` override](/tutorial/aside-layout/) renders Starlight's
+[`PageSidebar` override](/starlight-layouts/tutorial/aside-layout/) renders Starlight's
 default table of contents exactly as usual, then adds an extra callout
 panel underneath it — look at the right-hand column on a wide viewport.
 
 ## An additive override
 
-Unlike the [full-width](/demos/full-width/) and [minimal](/demos/minimal/)
+Unlike the [full-width](/starlight-layouts/demos/full-width/) and [minimal](/starlight-layouts/demos/minimal/)
 layouts, which each *remove* something from the default page, this one only
 *adds* to it. The override always renders `<Default />` for `PageSidebar`
 and layers extra markup around it, rather than branching between two

@@ -7,6 +7,13 @@
       "runtimeArgs": ["run", "dev"],
       "port": 4321,
       "autoPort": false
+    },
+    {
+      "name": "starlight-layouts-preview",
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": ["run", "preview"],
+      "port": 4322,
+      "autoPort": false
     }
   ]
 }

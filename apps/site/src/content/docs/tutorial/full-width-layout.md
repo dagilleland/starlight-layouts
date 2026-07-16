@@ -8,7 +8,7 @@ right-hand table-of-contents column, letting the main content pane use all
 the remaining horizontal space. It's a good fit for wide diagrams, tables,
 or reference pages where a floating TOC gets in the way.
 
-See it live: [`/demos/full-width/`](/demos/full-width/).
+See it live: [`/demos/full-width/`](/starlight-layouts/demos/full-width/).
 
 ## Why `TwoColumnContent`
 
@@ -62,10 +62,10 @@ const layout = getLayout(entry.data.pageLayout);
 
 `getLayout()` looks up the active `pageLayout` value in a small registry
 assembled from every installed `@starlight-layouts/layout-*` package —
-[Composing layout packages](/tutorial/composing-layout-packages/) covers
+[Composing layout packages](/starlight-layouts/tutorial/composing-layout-packages/) covers
 that registry in full. For now, what matters is `wide`: it's a flag three
 different layout packages set (`full-width`, `minimal`, and `dashboard`),
-all wanting the right column gone — the [minimal layout](/tutorial/minimal-layout/)
+all wanting the right column gone — the [minimal layout](/starlight-layouts/tutorial/minimal-layout/)
 goes a step further and also removes the left sidebar.
 
 Note that when `layout?.wide` is true, the `right-sidebar` slot content
@@ -85,7 +85,7 @@ space to its right where the TOC used to be.
 
 This project also overrides `ContentPanel`, checking the same `wide` flag
 as `TwoColumnContent` above, so `full-width` pages actually use the width
-they reclaim. The [dashboard layout tutorial](/tutorial/dashboard-layout/)
+they reclaim. The [dashboard layout tutorial](/starlight-layouts/tutorial/dashboard-layout/)
 walks through that override in full — it's introduced there because a
 widget grid makes the cap's effect obvious, but it applies here too.
 

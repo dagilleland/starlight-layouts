@@ -49,8 +49,8 @@ Every dispatcher imports `getLayout` and either checks a trait
 (`layout?.wide`, in `TwoColumnContent` and `ContentPanel`) or renders a
 component reference the active layout provided (`layout?.PageFrame`,
 `layout?.PageSidebarExtra`) — covered in full in the
-[full-width](/tutorial/full-width-layout/), [minimal](/tutorial/minimal-layout/),
-and [with-aside](/tutorial/aside-layout/) tutorial pages.
+[full-width](/starlight-layouts/tutorial/full-width-layout/), [minimal](/starlight-layouts/tutorial/minimal-layout/),
+and [with-aside](/starlight-layouts/tutorial/aside-layout/) tutorial pages.
 
 ## Why `layouts.meta.ts` is a separate file
 
@@ -103,7 +103,7 @@ picks it up the next time someone reads through both.
 
 Every `packages/layout-*` directory is a plain pnpm workspace package —
 raw `.astro`/`.ts` source, no build step, the same way
-`@astrojs/starlight-tailwind` (used earlier for [Tailwind](/tutorial/aside-layout/))
+`@astrojs/starlight-tailwind` (used earlier for [Tailwind](/starlight-layouts/tutorial/aside-layout/))
 ships. Its `package.json` exports both a barrel and raw file access:
 
 ```json title="packages/layout-dashboard/package.json"

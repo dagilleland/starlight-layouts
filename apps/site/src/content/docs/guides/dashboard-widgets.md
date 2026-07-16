@@ -3,10 +3,10 @@ title: Filling a dashboard
 description: Tips for deciding what goes inside a dashboard page and how to design individual widgets, using this site's DashboardGrid and Widget components.
 ---
 
-The [dashboard layout tutorial](/tutorial/dashboard-layout/) covers *how*
+The [dashboard layout tutorial](/starlight-layouts/tutorial/dashboard-layout/) covers *how*
 `pageLayout: dashboard` frees up the width for a widget grid. This page covers
 the part that's harder to get from reading component code: what to actually
-put in that space. See [`/demos/dashboard/`](/demos/dashboard/) for the
+put in that space. See [`/demos/dashboard/`](/starlight-layouts/demos/dashboard/) for the
 examples referenced below.
 
 ## One widget, one idea
@@ -63,7 +63,7 @@ lead.
 ## Keep widget count sane
 
 Four to eight widgets is a comfortable range for a single dashboard view —
-[the demo page](/demos/dashboard/) uses eight. Past that, group related
+[the demo page](/starlight-layouts/demos/dashboard/) uses eight. Past that, group related
 metrics onto separate dashboard pages (linked from the sidebar, same as any
 other page) rather than growing one grid indefinitely. If two widgets are
 frequently read together, that's a sign they belong on the same page; if a
@@ -93,12 +93,12 @@ Colors need no special handling on your part either: `Widget` reads every
 color from Starlight's own `--sl-color-*` tokens, which Starlight's
 built-in `print.css` already remaps to print-safe values (dark text on a
 white background, regardless of the page's on-screen theme) — the same
-mechanism covered in [Composing layout packages](/tutorial/composing-layout-packages/)
+mechanism covered in [Composing layout packages](/starlight-layouts/tutorial/composing-layout-packages/)
 for end-user theming applies here too.
 
 ## Static demo, live dashboard
 
-Every widget in [`/demos/dashboard/`](/demos/dashboard/) has a hardcoded
+Every widget in [`/demos/dashboard/`](/starlight-layouts/demos/dashboard/) has a hardcoded
 value, since this site has no backend. In a real dashboard, `Widget` would
 receive its `value`, `trend`, and `delta` props from fetched data — the
 component itself doesn't care where the numbers come from, but real usage

@@ -36,7 +36,7 @@ export const collections = {
 
 (`layoutIds` is `['full-width', 'minimal', 'with-aside', 'dashboard']` today,
 but it's derived from the installed layout packages rather than hardcoded —
-see [Composing layout packages](/tutorial/composing-layout-packages/).)
+see [Composing layout packages](/starlight-layouts/tutorial/composing-layout-packages/).)
 
 Leaving `pageLayout` unset keeps the field optional — pages with no
 `pageLayout` frontmatter fall through to Starlight's normal rendering
@@ -44,7 +44,7 @@ everywhere.
 
 This is deliberately a **different field** from Starlight's own built-in
 `template` (which only switches between `doc` and `splash`, see the
-[Splash demo](/demos/splash/)). It's also deliberately *not* called
+[Splash demo](/starlight-layouts/demos/splash/)). It's also deliberately *not* called
 `layout`, even though that would've been the more obvious name: MDX files
 already treat a truthy `layout` frontmatter key as an import path for an
 Astro layout component to wrap the page in — a real, unrelated
@@ -95,7 +95,7 @@ looks slightly different from the snippet above — instead of the `'minimal'
 small registry and renders whatever component that layout provides. Same
 idea, one extra layer of indirection so the `custom markup` part can live
 in its own package instead of inline here.
-[Composing layout packages](/tutorial/composing-layout-packages/) covers
+[Composing layout packages](/starlight-layouts/tutorial/composing-layout-packages/) covers
 why and how, once all four layouts are built.
 
 ## Set on a page

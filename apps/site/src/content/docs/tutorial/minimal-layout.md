@@ -8,13 +8,13 @@ right-hand table of contents, leaving just the header and the page content.
 It's useful for standalone pages — a print view, an embed, a one-off
 landing section — that shouldn't feel like part of the docs tree.
 
-See it live: [`/demos/minimal/`](/demos/minimal/).
+See it live: [`/demos/minimal/`](/starlight-layouts/demos/minimal/).
 
 ## Why `PageFrame` this time
 
 The left sidebar is rendered by `PageFrame`, not `TwoColumnContent` (which
 only controls the *right* column — see the
-[full-width layout](/tutorial/full-width-layout/)). Removing the left nav
+[full-width layout](/starlight-layouts/tutorial/full-width-layout/)). Removing the left nav
 means overriding `PageFrame` and skipping the `<nav>` it normally renders
 around the `sidebar` slot.
 
@@ -60,7 +60,7 @@ lives in the `layout-minimal` package, not in the dispatcher above:
 
 It renders the header slot as usual but simply never renders a `sidebar`
 slot at all — Starlight still computes the sidebar navigation for the
-page, but nothing here asks for it. [Composing layout packages](/tutorial/composing-layout-packages/)
+page, but nothing here asks for it. [Composing layout packages](/starlight-layouts/tutorial/composing-layout-packages/)
 covers why this split exists.
 
 ## The leaking CSS variable
@@ -103,9 +103,9 @@ based on state your override no longer reflects.
 
 `packages/layout-minimal/layout.meta.ts` also sets `wide: true`, the same
 flag `full-width` sets — so this layout automatically gets the
-[`TwoColumnContent` override](/tutorial/full-width-layout/) (drops the
+[`TwoColumnContent` override](/starlight-layouts/tutorial/full-width-layout/) (drops the
 right TOC column) and the
-[`ContentPanel` override](/tutorial/dashboard-layout/) (removes
+[`ContentPanel` override](/starlight-layouts/tutorial/dashboard-layout/) (removes
 Starlight's content-width cap) for free. No extra code needed in either
 dispatcher; both already check `layout?.wide` rather than a specific
 layout name.
