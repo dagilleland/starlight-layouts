@@ -1,7 +1,28 @@
 {
-  "name": "@starlight-layouts/layout-dashboard",
-  "private": true,
+  "name": "@dagilleland/layout-dashboard",
+  "version": "0.1.0",
+  "description": "Full-width Starlight layout for a widget grid, plus reusable DashboardGrid/Widget stat-tile components usable in any Starlight page. One of four layout packages from Starlight Layouts.",
   "type": "module",
+  "license": "MIT",
+  "author": "Dan Gilleland",
+  "homepage": "https://gilleland.ca/starlight-layouts/tutorial/dashboard-layout/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dagilleland/starlight-layouts.git",
+    "directory": "packages/layout-dashboard"
+  },
+  "bugs": {
+    "url": "https://github.com/dagilleland/starlight-layouts/issues"
+  },
+  "keywords": [
+    "astro",
+    "astro-component",
+    "starlight",
+    "starlight-layouts",
+    "layout",
+    "dashboard",
+    "widgets"
+  ],
   "exports": {
     ".": "./index.ts",
     "./meta": "./layout.meta.ts",

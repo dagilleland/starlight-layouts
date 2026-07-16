@@ -76,7 +76,7 @@ Run from the repo root — they proxy to `apps/site` via pnpm's `--filter`:
 
 To run a command against a single package directly, use
 `pnpm --filter <package-name> <command>` — e.g.
-`pnpm --filter @starlight-layouts/layout-dashboard ...`.
+`pnpm --filter @dagilleland/layout-dashboard ...`.
 
 ## Deployment
 

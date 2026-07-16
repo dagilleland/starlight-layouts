@@ -4,10 +4,10 @@
 // context that shouldn't have to compile `.astro` files.
 //
 // See: tutorial/composing-layout-packages.md
-import { fullWidthMeta } from '@starlight-layouts/layout-full-width/meta';
-import { minimalMeta } from '@starlight-layouts/layout-minimal/meta';
-import { withAsideMeta } from '@starlight-layouts/layout-with-aside/meta';
-import { dashboardMeta } from '@starlight-layouts/layout-dashboard/meta';
+import { fullWidthMeta } from '@dagilleland/layout-full-width/meta';
+import { minimalMeta } from '@dagilleland/layout-minimal/meta';
+import { withAsideMeta } from '@dagilleland/layout-with-aside/meta';
+import { dashboardMeta } from '@dagilleland/layout-dashboard/meta';
 
 export const layoutIds = [
 	fullWidthMeta.id,

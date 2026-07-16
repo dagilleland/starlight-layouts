@@ -1,4 +1,4 @@
-# `@starlight-layouts/layout-full-width`
+# `@dagilleland/layout-full-width`
 
 Part of [Starlight Layouts](https://gilleland.ca/starlight-layouts/) — a tutorial site for overriding Starlight components to build custom page layouts. This is the simplest of the four layouts it builds: it drops a page's right-hand table of contents and lets the main content pane use the full available width.
 
@@ -19,7 +19,15 @@ If you're not running a monorepo, or you'd rather adapt this layout than depend 
 
 **Prerequisites:** an Astro project using [Starlight](https://starlight.astro.build), with [Tailwind v4 set up per Starlight's own guide](https://starlight.astro.build/guides/css-and-tailwind/) (only needed if you also want the other three layouts in this family, which use Tailwind-classed components — this one doesn't).
 
-### 1. Add a frontmatter field
+### 1. Install the package
+
+```sh
+npm install @dagilleland/layout-full-width
+```
+
+Works the same with `pnpm add`, `yarn add`, or `bun add` — this is a normal published package, not tied to any particular package manager.
+
+### 2. Add a frontmatter field
 
 ```ts title="src/content.config.ts"
 import { defineCollection, z } from 'astro:content';
@@ -43,7 +51,7 @@ export const collections = {
 };
 ```
 
-### 2. Override `TwoColumnContent`
+### 3. Override `TwoColumnContent`
 
 ```astro title="src/components/overrides/TwoColumnContent.astro"
 ---
@@ -74,7 +82,7 @@ const wide = entry.data.pageLayout === 'full-width';
 </style>
 ```
 
-### 3. Override `ContentPanel`
+### 4. Override `ContentPanel`
 
 ```astro title="src/components/overrides/ContentPanel.astro"
 ---
@@ -106,7 +114,7 @@ const wide = entry.data.pageLayout === 'full-width';
 </style>
 ```
 
-### 4. Register both overrides
+### 5. Register both overrides
 
 ```js title="astro.config.mjs"
 starlight({
@@ -117,7 +125,7 @@ starlight({
 });
 ```
 
-### 5. Use it on a page
+### 6. Use it on a page
 
 ```md
 ---

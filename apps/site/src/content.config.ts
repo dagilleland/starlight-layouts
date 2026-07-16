@@ -21,7 +21,7 @@ export const collections = {
 					 * with this one and fail the build.
 					 *
 					 * The allowed values come from `layoutIds`, derived from every
-					 * installed `@starlight-layouts/layout-*` package rather than
+					 * installed `@dagilleland/layout-*` package rather than
 					 * hand-maintained here — see `layouts.meta.ts`.
 					 */
 					pageLayout: z.enum([...layoutIds]).optional(),

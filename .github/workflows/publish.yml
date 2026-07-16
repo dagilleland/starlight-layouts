@@ -1,0 +1,45 @@
+name: Publish packages to npm
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write # required for npm provenance (OIDC)
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v6
+
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: pnpm
+          registry-url: 'https://registry.npmjs.org'
+
+      # Installs every workspace package (the site app + all 4 layout
+      # packages) from the single root pnpm-lock.yaml.
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      # Publishes every non-private workspace package — the 4 layout
+      # packages under packages/. `apps/site` stays `"private": true` and
+      # is skipped automatically, no separate exclude list needed.
+      # `--provenance` attaches a cryptographic attestation tying the
+      # published version back to this exact commit and workflow run.
+      # `--no-git-checks` is standard for CI publishes: pnpm's default
+      # git-cleanliness checks assume a local, interactive publish.
+      - name: Publish to npm
+        run: pnpm -r publish --access public --provenance --no-git-checks
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

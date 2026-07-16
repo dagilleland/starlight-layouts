@@ -8,10 +8,10 @@
 // to change.
 //
 // See: tutorial/composing-layout-packages.md
-import { fullWidthLayout } from '@starlight-layouts/layout-full-width';
-import { minimalLayout } from '@starlight-layouts/layout-minimal';
-import { withAsideLayout } from '@starlight-layouts/layout-with-aside';
-import { dashboardLayout } from '@starlight-layouts/layout-dashboard';
+import { fullWidthLayout } from '@dagilleland/layout-full-width';
+import { minimalLayout } from '@dagilleland/layout-minimal';
+import { withAsideLayout } from '@dagilleland/layout-with-aside';
+import { dashboardLayout } from '@dagilleland/layout-dashboard';
 import type { LayoutId } from './layouts.meta';
 
 const layouts = [fullWidthLayout, minimalLayout, withAsideLayout, dashboardLayout];

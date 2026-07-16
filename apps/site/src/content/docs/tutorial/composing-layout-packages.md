@@ -32,10 +32,10 @@ or know Starlight's `components` option exists at all.
 into the one thing each dispatcher needs — a lookup by `pageLayout` value:
 
 ```ts title="apps/site/src/layouts.config.ts"
-import { fullWidthLayout } from '@starlight-layouts/layout-full-width';
-import { minimalLayout } from '@starlight-layouts/layout-minimal';
-import { withAsideLayout } from '@starlight-layouts/layout-with-aside';
-import { dashboardLayout } from '@starlight-layouts/layout-dashboard';
+import { fullWidthLayout } from '@dagilleland/layout-full-width';
+import { minimalLayout } from '@dagilleland/layout-minimal';
+import { withAsideLayout } from '@dagilleland/layout-with-aside';
+import { dashboardLayout } from '@dagilleland/layout-dashboard';
 import type { LayoutId } from './layouts.meta';
 
 const layouts = [fullWidthLayout, minimalLayout, withAsideLayout, dashboardLayout];
@@ -79,10 +79,10 @@ packages, builds a literal-typed tuple of IDs, and that's what
 `content.config.ts` actually imports:
 
 ```ts title="apps/site/src/layouts.meta.ts"
-import { fullWidthMeta } from '@starlight-layouts/layout-full-width/meta';
-import { minimalMeta } from '@starlight-layouts/layout-minimal/meta';
-import { withAsideMeta } from '@starlight-layouts/layout-with-aside/meta';
-import { dashboardMeta } from '@starlight-layouts/layout-dashboard/meta';
+import { fullWidthMeta } from '@dagilleland/layout-full-width/meta';
+import { minimalMeta } from '@dagilleland/layout-minimal/meta';
+import { withAsideMeta } from '@dagilleland/layout-with-aside/meta';
+import { dashboardMeta } from '@dagilleland/layout-dashboard/meta';
 
 export const layoutIds = [
   fullWidthMeta.id,
@@ -108,7 +108,7 @@ ships. Its `package.json` exports both a barrel and raw file access:
 
 ```json title="packages/layout-dashboard/package.json"
 {
-  "name": "@starlight-layouts/layout-dashboard",
+  "name": "@dagilleland/layout-dashboard",
   "private": true,
   "type": "module",
   "exports": {
@@ -132,10 +132,10 @@ pnpm resolves to the local package regardless of any published version:
 ```json title="apps/site/package.json (excerpt)"
 {
   "dependencies": {
-    "@starlight-layouts/layout-full-width": "workspace:*",
-    "@starlight-layouts/layout-minimal": "workspace:*",
-    "@starlight-layouts/layout-with-aside": "workspace:*",
-    "@starlight-layouts/layout-dashboard": "workspace:*"
+    "@dagilleland/layout-full-width": "workspace:*",
+    "@dagilleland/layout-minimal": "workspace:*",
+    "@dagilleland/layout-with-aside": "workspace:*",
+    "@dagilleland/layout-dashboard": "workspace:*"
   }
 }
 ```
@@ -172,7 +172,7 @@ no matter where the package physically ends up. A consumer adds one import
 to their own Tailwind CSS entry:
 
 ```css title="apps/site/src/styles/global.css (excerpt)"
-@import '@starlight-layouts/layout-dashboard/tailwind.css';
+@import '@dagilleland/layout-dashboard/tailwind.css';
 ```
 
 and the package's classes get scanned and compiled by the **consumer's

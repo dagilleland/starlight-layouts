@@ -1,7 +1,26 @@
 {
-  "name": "@starlight-layouts/layout-with-aside",
-  "private": true,
+  "name": "@dagilleland/layout-with-aside",
+  "version": "0.1.0",
+  "description": "Starlight layout that adds a callout panel alongside the default table of contents, without replacing it. One of four layout packages from Starlight Layouts.",
   "type": "module",
+  "license": "MIT",
+  "author": "Dan Gilleland",
+  "homepage": "https://gilleland.ca/starlight-layouts/tutorial/aside-layout/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dagilleland/starlight-layouts.git",
+    "directory": "packages/layout-with-aside"
+  },
+  "bugs": {
+    "url": "https://github.com/dagilleland/starlight-layouts/issues"
+  },
+  "keywords": [
+    "astro",
+    "astro-component",
+    "starlight",
+    "starlight-layouts",
+    "layout"
+  ],
   "exports": {
     ".": "./index.ts",
     "./meta": "./layout.meta.ts",

@@ -1,7 +1,26 @@
 {
-  "name": "@starlight-layouts/layout-full-width",
-  "private": true,
+  "name": "@dagilleland/layout-full-width",
+  "version": "0.1.0",
+  "description": "Starlight layout that drops the right-hand table of contents and lets page content use the full available width. One of four layout packages from Starlight Layouts.",
   "type": "module",
+  "license": "MIT",
+  "author": "Dan Gilleland",
+  "homepage": "https://gilleland.ca/starlight-layouts/tutorial/full-width-layout/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dagilleland/starlight-layouts.git",
+    "directory": "packages/layout-full-width"
+  },
+  "bugs": {
+    "url": "https://github.com/dagilleland/starlight-layouts/issues"
+  },
+  "keywords": [
+    "astro",
+    "astro-component",
+    "starlight",
+    "starlight-layouts",
+    "layout"
+  ],
   "exports": {
     ".": "./index.ts",
     "./meta": "./layout.meta.ts",

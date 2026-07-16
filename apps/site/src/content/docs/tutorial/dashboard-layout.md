@@ -104,7 +104,7 @@ with, and the reason this override is introduced here rather than back in
 the full-width tutorial:
 
 ```astro title="Using the grid + widget components in a dashboard page"
-import { DashboardGrid, Widget } from '@starlight-layouts/layout-dashboard';
+import { DashboardGrid, Widget } from '@dagilleland/layout-dashboard';
 
 <DashboardGrid>
   <Widget title="Active users" value="2,481" trend="up" delta="4.2% vs last week" />

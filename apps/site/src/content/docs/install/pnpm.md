@@ -1,11 +1,11 @@
 ---
 title: Install layouts via pnpm
-description: How to add one or more layout packages from this repository straight into your own Astro Starlight project, using pnpm's git-with-subdirectory dependency support.
+description: How to add one or more layout packages straight from this repository's main branch into your own Astro Starlight project, using pnpm's git-with-subdirectory dependency support.
 ---
 
-You don't need to clone this whole monorepo to use one of its layouts. If you already have your own Astro + Starlight site, pnpm can install a single package straight out of a subdirectory of this GitHub repo — no publishing, no registry, no forking required.
+Each layout is also published on npm, and [installing via npm](/starlight-layouts/install/npm/) is simpler and works with any package manager — that's the page to use if you just want the latest release. **This page is for a narrower case**: installing straight from this repo's `main` branch, ahead of whatever's currently published, using pnpm's git-with-subdirectory support.
 
-This page covers that path specifically. If you're cloning or forking the whole project instead — to follow the tutorial, or run the demo site yourself — the packages are already wired together via `workspace:*`; see [Composing layout packages](/starlight-layouts/tutorial/composing-layout-packages/) for how that fits together.
+If you're cloning or forking the whole project instead — to follow the tutorial, or run the demo site yourself — the packages are already wired together via `workspace:*`; see [Composing layout packages](/starlight-layouts/tutorial/composing-layout-packages/) for how that fits together.
 
 ## tl;dr
 
@@ -34,12 +34,12 @@ pnpm add "github:dagilleland/starlight-layouts#main&path:packages/layout-dashboa
 
 Quote the whole value — `&` is a shell special character, and an unquoted one will do something you don't want.
 
-This installs `@starlight-layouts/layout-dashboard` into your `node_modules` and adds it to your `package.json`, using the package's own name and version (not the value you typed):
+This installs `@dagilleland/layout-dashboard` into your `node_modules` and adds it to your `package.json`, using the package's own name and version (not the value you typed):
 
 ```json title="package.json (after install)"
 {
   "dependencies": {
-    "@starlight-layouts/layout-dashboard": "github:dagilleland/starlight-layouts#main&path:packages/layout-dashboard"
+    "@dagilleland/layout-dashboard": "github:dagilleland/starlight-layouts#main&path:packages/layout-dashboard"
   }
 }
 ```
@@ -68,7 +68,7 @@ You're never forced to take all four "as a set."
 
 This installs the package's raw source — the same `.astro`/`.ts` files you'd find in the repo, no build step, the same way this project's own app consumes `@astrojs/starlight-tailwind`. What it does **not** do is wire the layout into your Starlight site: registering an override component, adding a content-schema field, and so on are still manual steps.
 
-Each package's own README covers exactly that, and it installs right alongside the code — open `node_modules/@starlight-layouts/<package-name>/README.md` after installing, or read it on GitHub first: [`layout-full-width`](https://github.com/dagilleland/starlight-layouts/tree/main/packages/layout-full-width#readme), [`layout-minimal`](https://github.com/dagilleland/starlight-layouts/tree/main/packages/layout-minimal#readme), [`layout-with-aside`](https://github.com/dagilleland/starlight-layouts/tree/main/packages/layout-with-aside#readme), [`layout-dashboard`](https://github.com/dagilleland/starlight-layouts/tree/main/packages/layout-dashboard#readme).
+Each package's own README covers exactly that, and it installs right alongside the code — open `node_modules/@dagilleland/<package-name>/README.md` after installing, or read it on GitHub first: [`layout-full-width`](https://github.com/dagilleland/starlight-layouts/tree/main/packages/layout-full-width#readme), [`layout-minimal`](https://github.com/dagilleland/starlight-layouts/tree/main/packages/layout-minimal#readme), [`layout-with-aside`](https://github.com/dagilleland/starlight-layouts/tree/main/packages/layout-with-aside#readme), [`layout-dashboard`](https://github.com/dagilleland/starlight-layouts/tree/main/packages/layout-dashboard#readme).
 
 ## Pin a version instead of tracking `main`
 
@@ -85,7 +85,7 @@ Find a commit's SHA on the repo's [commit history](https://github.com/dagillelan
 Same as any other dependency:
 
 ```sh
-pnpm remove @starlight-layouts/layout-dashboard
+pnpm remove @dagilleland/layout-dashboard
 ```
 
 Then remove whatever override/schema wiring you added by hand for it — uninstalling the package doesn't undo that part.

@@ -1,4 +1,4 @@
-# `@starlight-layouts/layout-dashboard`
+# `@dagilleland/layout-dashboard`
 
 Part of [Starlight Layouts](https://gilleland.ca/starlight-layouts/) — a tutorial site for overriding Starlight components to build custom page layouts. This one fills a full-width page with a grid of stat widgets, the closest thing in this family to a traditional dashboard.
 
@@ -27,11 +27,16 @@ See [Building: dashboard layout](https://gilleland.ca/starlight-layouts/tutorial
 
 ### The easy part: use the widgets in any page, today
 
-`DashboardGrid` and `Widget` are just Astro components. Copy them into your project and use them in any `.mdx` page — no override, no frontmatter field, no dispatcher:
+`DashboardGrid` and `Widget` are just Astro components — install the package and import them, no override, no frontmatter field, no dispatcher:
+
+```sh
+npm install @dagilleland/layout-dashboard
+```
+
+Works the same with `pnpm add`, `yarn add`, or `bun add`.
 
 ```mdx
-import DashboardGrid from '../../components/DashboardGrid.astro';
-import Widget from '../../components/Widget.astro';
+import { DashboardGrid, Widget } from '@dagilleland/layout-dashboard';
 
 <DashboardGrid>
   <Widget title="Active users" value="2,481" trend="up" delta="4.2% vs last week" />

@@ -1,4 +1,4 @@
-# `@starlight-layouts/layout-with-aside`
+# `@dagilleland/layout-with-aside`
 
 Part of [Starlight Layouts](https://gilleland.ca/starlight-layouts/) — a tutorial site for overriding Starlight components to build custom page layouts. Unlike the other three layouts in this family, this one doesn't remove anything from Starlight's default page — it *adds* a callout panel to the right-hand column, alongside the normal table of contents rather than in place of it.
 
@@ -23,7 +23,15 @@ See [Building: layout with aside](https://gilleland.ca/starlight-layouts/tutoria
 
 **Prerequisites:** an Astro project using [Starlight](https://starlight.astro.build), with [Tailwind v4 set up per Starlight's own guide](https://starlight.astro.build/guides/css-and-tailwind/) — `AsideCallout` is styled entirely with Tailwind utility classes, referencing Starlight's own `--sl-color-*` custom properties so it automatically matches your site's theme.
 
-### 1. Add a frontmatter field
+### 1. Install the package
+
+```sh
+npm install @dagilleland/layout-with-aside
+```
+
+Works the same with `pnpm add`, `yarn add`, or `bun add`.
+
+### 2. Add a frontmatter field
 
 ```ts title="src/content.config.ts"
 import { defineCollection, z } from 'astro:content';
@@ -44,14 +52,14 @@ export const collections = {
 };
 ```
 
-### 2. Copy in the components, then override `PageSidebar`
+### 3. Override `PageSidebar`
 
-Copy `AsideCallout.astro` and `PageSidebarExtra.astro` into your project (they only import each other, nothing from this package's `index.ts`), then dispatch to them:
+Import `PageSidebarExtra` straight from the installed package and dispatch to it:
 
 ```astro title="src/components/overrides/PageSidebar.astro"
 ---
 import Default from '@astrojs/starlight/components/PageSidebar.astro';
-import PageSidebarExtra from '../PageSidebarExtra.astro';
+import PageSidebarExtra from '@dagilleland/layout-with-aside/PageSidebarExtra.astro';
 
 const { entry } = Astro.locals.starlightRoute;
 const withAside = entry.data.pageLayout === 'with-aside';
@@ -61,7 +69,7 @@ const withAside = entry.data.pageLayout === 'with-aside';
 {withAside && <PageSidebarExtra />}
 ```
 
-### 3. Register the override
+### 4. Register the override
 
 ```js title="astro.config.mjs"
 starlight({
@@ -71,7 +79,7 @@ starlight({
 });
 ```
 
-### 4. Use it on a page
+### 5. Use it on a page
 
 ```md
 ---

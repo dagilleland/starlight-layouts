@@ -61,7 +61,7 @@ const layout = getLayout(entry.data.pageLayout);
 ```
 
 `getLayout()` looks up the active `pageLayout` value in a small registry
-assembled from every installed `@starlight-layouts/layout-*` package —
+assembled from every installed `@dagilleland/layout-*` package —
 [Composing layout packages](/starlight-layouts/tutorial/composing-layout-packages/) covers
 that registry in full. For now, what matters is `wide`: it's a flag three
 different layout packages set (`full-width`, `minimal`, and `dashboard`),

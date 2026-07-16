@@ -1,4 +1,4 @@
-# `@starlight-layouts/layout-minimal`
+# `@dagilleland/layout-minimal`
 
 Part of [Starlight Layouts](https://gilleland.ca/starlight-layouts/) — a tutorial site for overriding Starlight components to build custom page layouts. This layout strips a page down to just the header and content: no left navigation sidebar, no right-hand table of contents. Useful for standalone pages — a print view, an embed, a one-off landing section — that shouldn't feel like part of the docs tree.
 
@@ -20,7 +20,15 @@ See [Building: minimal layout](https://gilleland.ca/starlight-layouts/tutorial/m
 
 `minimal` needs two things wired up: a `PageFrame` override to render (or not render) the component above, and the same `wide` treatment as `layout-full-width` (the sibling package in this family) to also drop the right-hand table of contents.
 
-### 1. Add a frontmatter field
+### 1. Install the package
+
+```sh
+npm install @dagilleland/layout-minimal
+```
+
+Works the same with `pnpm add`, `yarn add`, or `bun add`.
+
+### 2. Add a frontmatter field
 
 ```ts title="src/content.config.ts"
 import { defineCollection, z } from 'astro:content';
@@ -41,14 +49,14 @@ export const collections = {
 };
 ```
 
-### 2. Override `PageFrame`
+### 3. Override `PageFrame`
 
-Copy `PageFrame.astro` from this package into your project (e.g. `src/components/MinimalPageFrame.astro`), then dispatch to it:
+Import `PageFrame.astro` straight from the installed package (its `package.json` exports every file, not just `index.ts`) and dispatch to it:
 
 ```astro title="src/components/overrides/PageFrame.astro"
 ---
 import Default from '@astrojs/starlight/components/PageFrame.astro';
-import MinimalPageFrame from '../MinimalPageFrame.astro';
+import MinimalPageFrame from '@dagilleland/layout-minimal/PageFrame.astro';
 
 const { entry } = Astro.locals.starlightRoute;
 const minimal = entry.data.pageLayout === 'minimal';
@@ -68,11 +76,11 @@ const minimal = entry.data.pageLayout === 'minimal';
 )}
 ```
 
-### 3. Override `TwoColumnContent` and `ContentPanel`
+### 4. Override `TwoColumnContent` and `ContentPanel`
 
 Same two overrides as [`layout-full-width`](../layout-full-width/README.md), checking `pageLayout === 'minimal'` (or `'full-width'`, if you're using both — see that package's README for the full code). Both are necessary for the same reason: without them, the space freed up by removing the sidebars just sits empty.
 
-### 4. Register the overrides
+### 5. Register the overrides
 
 ```js title="astro.config.mjs"
 starlight({
@@ -84,7 +92,7 @@ starlight({
 });
 ```
 
-### 5. Use it on a page
+### 6. Use it on a page
 
 ```md
 ---

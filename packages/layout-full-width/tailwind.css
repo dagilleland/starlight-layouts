@@ -3,7 +3,7 @@
  * relative to *this file*, not whatever consumes it — so it works whether
  * this package is a sibling directory in a monorepo or installed into a
  * consumer's node_modules from npm. Import it once from your Tailwind CSS
- * entry: `@import '@starlight-layouts/layout-full-width/tailwind.css';`
+ * entry: `@import '@dagilleland/layout-full-width/tailwind.css';`
  *
  * See: tutorial/composing-layout-packages.md
  */

@@ -13,7 +13,7 @@
  * this works the same way whether the package is a monorepo sibling or
  * installed from npm. See tutorial/composing-layout-packages.md.
  */
-@import '@starlight-layouts/layout-full-width/tailwind.css';
-@import '@starlight-layouts/layout-minimal/tailwind.css';
-@import '@starlight-layouts/layout-with-aside/tailwind.css';
-@import '@starlight-layouts/layout-dashboard/tailwind.css';
+@import '@dagilleland/layout-full-width/tailwind.css';
+@import '@dagilleland/layout-minimal/tailwind.css';
+@import '@dagilleland/layout-with-aside/tailwind.css';
+@import '@dagilleland/layout-dashboard/tailwind.css';
