@@ -1,0 +1,42 @@
+---
+// Override of `@astrojs/starlight/components/ContentPanel.astro`,
+// registered automatically by this package's Starlight plugin (see
+// `../index.ts`). Identical to the tutorial site's own
+// `apps/site/src/components/overrides/ContentPanel.astro`.
+import Default from '@astrojs/starlight/components/ContentPanel.astro';
+import { getLayout } from '../layouts.config';
+
+const { entry } = Astro.locals.starlightRoute;
+const layout = getLayout(entry.data.pageLayout);
+---
+
+{
+	layout?.wide ? (
+		<div class="content-panel content-panel--uncapped">
+			<div class="uncapped-container">
+				<slot />
+			</div>
+		</div>
+	) : (
+		<Default>
+			<slot />
+		</Default>
+	)
+}
+
+<style>
+	@layer starlight.core {
+		.content-panel--uncapped {
+			padding: 1.5rem var(--sl-content-pad-x);
+		}
+		.content-panel--uncapped + .content-panel--uncapped {
+			border-top: 1px solid var(--sl-color-hairline);
+		}
+		.uncapped-container {
+			max-width: none;
+		}
+		.uncapped-container > :global(* + *) {
+			margin-top: 1.5rem;
+		}
+	}
+</style>

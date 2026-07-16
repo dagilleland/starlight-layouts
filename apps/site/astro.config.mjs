@@ -50,11 +50,15 @@ export default defineConfig({
 						{ label: 'Building: layout with aside', slug: 'tutorial/aside-layout' },
 						{ label: 'Building: dashboard layout', slug: 'tutorial/dashboard-layout' },
 						{ label: 'Composing layout packages', slug: 'tutorial/composing-layout-packages' },
+						{ label: 'Turning it into a Starlight plugin', slug: 'tutorial/starlight-plugin' },
 					],
 				},
 				{
 					label: 'Guides',
-					items: [{ label: 'Filling a dashboard', slug: 'guides/dashboard-widgets' }],
+					items: [
+						{ label: 'Filling a dashboard', slug: 'guides/dashboard-widgets' },
+						{ label: 'Plugin or standalone layouts?', slug: 'guides/plugin-or-standalone' },
+					],
 				},
 				{
 					label: 'Layout demos',

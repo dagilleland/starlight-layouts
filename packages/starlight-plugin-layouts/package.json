@@ -1,0 +1,40 @@
+{
+  "name": "@dagilleland/starlight-plugin-layouts",
+  "version": "0.1.0",
+  "description": "Starlight plugin that bundles all four Starlight Layouts packages and registers their component overrides automatically — no override files to create.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Dan Gilleland",
+  "homepage": "https://gilleland.ca/starlight-layouts/tutorial/starlight-plugin/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dagilleland/starlight-layouts.git",
+    "directory": "packages/starlight-plugin-layouts"
+  },
+  "bugs": {
+    "url": "https://github.com/dagilleland/starlight-layouts/issues"
+  },
+  "keywords": [
+    "astro",
+    "astro-component",
+    "astro-integration",
+    "starlight",
+    "starlight-plugin",
+    "starlight-layouts",
+    "layout"
+  ],
+  "exports": {
+    ".": "./index.ts",
+    "./meta": "./layouts.meta.ts",
+    "./*": "./*"
+  },
+  "dependencies": {
+    "@dagilleland/layout-full-width": "workspace:*",
+    "@dagilleland/layout-minimal": "workspace:*",
+    "@dagilleland/layout-with-aside": "workspace:*",
+    "@dagilleland/layout-dashboard": "workspace:*"
+  },
+  "peerDependencies": {
+    "astro": "^7.0.2"
+  }
+}

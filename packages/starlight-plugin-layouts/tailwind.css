@@ -1,0 +1,19 @@
+/*
+ * Aggregates all four bundled layout packages' own `tailwind.css` files
+ * into one import — a convenience so a consumer of this plugin writes one
+ * `@import` instead of four. NOT auto-registered by the plugin itself:
+ * Tailwind v4 only honors `@source` inside the same CSS module graph as
+ * wherever `tailwindcss` itself is imported, and a Starlight plugin's
+ * `customCss` array entries are disconnected roots, not part of that
+ * graph — so this still has to be imported from your own Tailwind entry
+ * file by hand, same as the individual layout packages. See the README.
+ * Each imported file's `@source` directive still resolves relative to
+ * *that* file, not this one, so this works regardless of how deep the
+ * import chain gets.
+ *
+ * See: tutorial/starlight-plugin.md
+ */
+@import '@dagilleland/layout-full-width/tailwind.css';
+@import '@dagilleland/layout-minimal/tailwind.css';
+@import '@dagilleland/layout-with-aside/tailwind.css';
+@import '@dagilleland/layout-dashboard/tailwind.css';

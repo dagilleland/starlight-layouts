@@ -1,0 +1,33 @@
+---
+// Override of `@astrojs/starlight/components/TwoColumnContent.astro`,
+// registered automatically by this package's Starlight plugin (see
+// `../index.ts`). Identical to the tutorial site's own
+// `apps/site/src/components/overrides/TwoColumnContent.astro`.
+import Default from '@astrojs/starlight/components/TwoColumnContent.astro';
+import { getLayout } from '../layouts.config';
+
+const { entry } = Astro.locals.starlightRoute;
+const layout = getLayout(entry.data.pageLayout);
+---
+
+{
+	layout?.wide ? (
+		<div class="main-pane main-pane--full">
+			<slot />
+		</div>
+	) : (
+		<Default>
+			<slot name="right-sidebar" slot="right-sidebar" />
+			<slot />
+		</Default>
+	)
+}
+
+<style>
+	@layer starlight.core {
+		.main-pane--full {
+			isolation: isolate;
+			width: 100%;
+		}
+	}
+</style>

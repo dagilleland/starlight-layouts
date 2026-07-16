@@ -65,6 +65,24 @@ importers:
         specifier: ^7.0.2
         version: 7.0.9(@astrojs/markdown-remark@7.2.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@24.13.3)(jiti@2.7.0)
 
+  packages/starlight-plugin-layouts:
+    dependencies:
+      '@dagilleland/layout-dashboard':
+        specifier: workspace:*
+        version: link:../layout-dashboard
+      '@dagilleland/layout-full-width':
+        specifier: workspace:*
+        version: link:../layout-full-width
+      '@dagilleland/layout-minimal':
+        specifier: workspace:*
+        version: link:../layout-minimal
+      '@dagilleland/layout-with-aside':
+        specifier: workspace:*
+        version: link:../layout-with-aside
+      astro:
+        specifier: ^7.0.2
+        version: 7.0.9(@astrojs/markdown-remark@7.2.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@24.13.3)(jiti@2.7.0)
+
 packages:
 
   '@astrojs/compiler-binding-darwin-arm64@0.3.1':

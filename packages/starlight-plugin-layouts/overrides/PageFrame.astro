@@ -1,0 +1,29 @@
+---
+// Override of `@astrojs/starlight/components/PageFrame.astro`, registered
+// automatically by this package's Starlight plugin (see `../index.ts`).
+// Identical dispatcher logic to the tutorial site's own
+// `apps/site/src/components/overrides/PageFrame.astro` — the only
+// difference is this one ships pre-wired inside a plugin instead of being
+// hand-copied into a consumer's project.
+import Default from '@astrojs/starlight/components/PageFrame.astro';
+import { getLayout } from '../layouts.config';
+
+const { entry } = Astro.locals.starlightRoute;
+const layout = getLayout(entry.data.pageLayout);
+const Custom = layout?.PageFrame;
+---
+
+{
+	Custom ? (
+		<Custom>
+			<slot name="header" slot="header" />
+			<slot />
+		</Custom>
+	) : (
+		<Default>
+			<slot name="header" slot="header" />
+			<slot name="sidebar" slot="sidebar" />
+			<slot />
+		</Default>
+	)
+}

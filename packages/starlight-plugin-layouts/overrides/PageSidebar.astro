@@ -1,0 +1,15 @@
+---
+// Override of `@astrojs/starlight/components/PageSidebar.astro`, registered
+// automatically by this package's Starlight plugin (see `../index.ts`).
+// Identical to the tutorial site's own
+// `apps/site/src/components/overrides/PageSidebar.astro`.
+import Default from '@astrojs/starlight/components/PageSidebar.astro';
+import { getLayout } from '../layouts.config';
+
+const { entry } = Astro.locals.starlightRoute;
+const layout = getLayout(entry.data.pageLayout);
+const Extra = layout?.PageSidebarExtra;
+---
+
+<Default />
+{Extra && <Extra />}
