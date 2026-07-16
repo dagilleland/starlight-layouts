@@ -24,6 +24,13 @@ export default defineConfig({
 			},
 			sidebar: [
 				{
+					label: 'Install',
+					items: [
+						{ label: 'Install layouts via pnpm', slug: 'install/pnpm' },
+						{ label: 'Manually copying layouts', slug: 'install/manual-copy' },
+					],
+				},
+				{
 					label: 'Tutorial',
 					items: [
 						{ label: 'How overrides work', slug: 'tutorial/how-overrides-work' },
