@@ -213,6 +213,56 @@ declares it, not whichever file imports it:
 @import '@dagilleland/starlight-plugin-layouts/tailwind.css';
 ```
 
+## The workspace:* trap, if you publish something like this yourself
+
+There's a third gotcha, separate from the plugin API's own limits above —
+one only visible at publish time, learned the hard way. This package's
+`package.json` lists its four dependencies using pnpm's workspace
+protocol, not real version numbers:
+
+```json title="packages/starlight-plugin-layouts/package.json (excerpt)"
+{
+  "dependencies": {
+    "@dagilleland/layout-full-width": "workspace:*",
+    "@dagilleland/layout-minimal": "workspace:*",
+    "@dagilleland/layout-with-aside": "workspace:*",
+    "@dagilleland/layout-dashboard": "workspace:*"
+  }
+}
+```
+
+`workspace:*` only means something *inside* the pnpm workspace that defines
+it — it tells pnpm "link to whatever's in this monorepo, not the
+registry." `pnpm publish` and `pnpm pack` know to rewrite it to each
+sibling's real, currently-published version before the package leaves the
+workspace. Plain `npm publish` doesn't — it has no concept of the
+`workspace:` protocol at all, and ships that literal, unresolvable string
+as-is.
+
+That's exactly what happened the first time this package was published: it
+went out via `npm publish`, chosen specifically because `pnpm publish`'s
+interactive login flow had hung once before. The published package
+installed fine inside *this* monorepo (pnpm was still resolving the
+dependency from the local workspace, never touching the broken published
+metadata) but broke for absolutely everyone who installed it from the
+registry into their own project — bun, npm, yarn, **and pnpm**. Confirmed
+directly: even `pnpm add` against the broken version, run from a plain,
+non-workspace project, fails with the same
+`"@dagilleland/layout-minimal@workspace:*" is in the dependencies but no
+package named ... is present in the workspace` error bun reported.
+`workspace:*` shipped to the registry isn't a "some package managers
+understand it" problem — once it leaves its originating workspace, it's
+broken for every consumer, full stop.
+
+The fix wasn't switching back to `pnpm publish` — it's a small script,
+[`publish.mjs`](https://github.com/dagilleland/starlight-layouts/blob/main/packages/starlight-plugin-layouts/publish.mjs),
+that substitutes each sibling's real, currently-published version into a
+copy of `package.json` immediately before running plain `npm publish`,
+then restores the `workspace:*` version afterward so local monorepo
+development keeps working unchanged. If you're publishing a package with
+real sibling dependencies out of a monorepo, this is the thing to get
+right *before* your first release, not after.
+
 ## One plugin, one owner
 
 Because this plugin claims all four override slots for the whole family of
