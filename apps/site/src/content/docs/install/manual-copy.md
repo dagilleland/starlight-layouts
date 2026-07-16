@@ -3,7 +3,7 @@ title: Manually copying layouts
 description: How to copy a layout's files out of this repository by hand and adapt them into your own project — no pnpm dependency, full freedom to modify.
 ---
 
-If you're not on pnpm (e.g.: npm, yarn, bun, etc.), or you'd rather own the code outright — modify it freely, with no git dependency quietly tracking someone else's branch — copying the files in by hand works too. It's more manual than [installing via pnpm](/starlight-layouts/install/pnpm/), but it works with any package manager, or none at all.
+If you're not on pnpm (e.g.: npm, yarn, bun, etc.), or you'd rather own the code outright — modify it freely, with no git dependency quietly tracking someone else's branch — copying the files in by hand works too. It's more manual than [installing via pnpm](/starlight-layouts/install/pnpm/), but it works with any package manager, or none at all. If you don't need to own or modify the code, [installing via npm](/starlight-layouts/install/npm/) or [via plugin](/starlight-layouts/install/plugin/) is far less manual.
 
 ## What "copying a layout" actually involves
 

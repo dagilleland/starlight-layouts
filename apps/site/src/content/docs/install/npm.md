@@ -5,6 +5,8 @@ description: Install one or more layout packages from the public npm registry �
 
 Each layout is published as its own package under the `@dagilleland` scope. This is the simplest way to use one: a normal registry install, with any package manager.
 
+Want all four layouts with the least setup, and don't need to read the override code? [Install all four (plugin)](/starlight-layouts/install/plugin/) does the wiring below for you, from a single `plugins: [...]` line. This page is for installing individual packages — pick one layout, or a subset, and wire each up yourself.
+
 ## tl;dr
 
 ```sh
@@ -65,7 +67,8 @@ Drop that into any `.mdx` page and it renders — no frontmatter field, no overr
 
 ## When you'd want a different method instead
 
+- **You want all four layouts with less manual wiring**, and don't need to read the override code — see [Install all four (plugin)](/starlight-layouts/install/plugin/).
 - **You want the unreleased, in-development version** rather than the latest published release — see [Install layouts via pnpm](/starlight-layouts/install/pnpm/), which installs straight from this repo's `main` branch.
 - **You want to modify a layout's source directly**, not just configure it — see [Manually copying layouts](/starlight-layouts/install/manual-copy/).
 
-For everyone else, this page is the one to use.
+For everyone else installing individual layouts, this page is the one to use.

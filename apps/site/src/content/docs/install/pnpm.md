@@ -3,7 +3,7 @@ title: Install layouts via pnpm
 description: How to add one or more layout packages straight from this repository's main branch into your own Astro Starlight project, using pnpm's git-with-subdirectory dependency support.
 ---
 
-Each layout is also published on npm, and [installing via npm](/starlight-layouts/install/npm/) is simpler and works with any package manager — that's the page to use if you just want the latest release. **This page is for a narrower case**: installing straight from this repo's `main` branch, ahead of whatever's currently published, using pnpm's git-with-subdirectory support.
+Each layout is also published on npm, and [installing via npm](/starlight-layouts/install/npm/) is simpler and works with any package manager — that's the page to use if you just want the latest release (or [install all four via plugin](/starlight-layouts/install/plugin/), with less manual wiring). **This page is for a narrower case**: installing straight from this repo's `main` branch, ahead of whatever's currently published, using pnpm's git-with-subdirectory support.
 
 If you're cloning or forking the whole project instead — to follow the tutorial, or run the demo site yourself — the packages are already wired together via `workspace:*`; see [Composing layout packages](/starlight-layouts/tutorial/composing-layout-packages/) for how that fits together.
 

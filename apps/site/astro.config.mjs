@@ -26,6 +26,7 @@ export default defineConfig({
 				{
 					label: 'Install',
 					items: [
+						{ label: 'Install all four (plugin)', slug: 'install/plugin' },
 						{ label: 'Install layouts via npm', slug: 'install/npm' },
 						{ label: 'Install layouts via pnpm', slug: 'install/pnpm' },
 						{ label: 'Manually copying layouts', slug: 'install/manual-copy' },
